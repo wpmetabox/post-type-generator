@@ -20,3 +20,8 @@ export const LabelSettings = [
 	{ type: 'text', name: 'not_found_in_trash', label: 'Not found in trash', placeholder: 'The not found in trash text' },
 	{ type: 'text', name: 'parent_item_colon', label: 'Parent items', placeholder: 'The parent text' },
 ];
+
+export const Taxonomies = [
+	{ type: 'checkbox', name: 'category', label: 'Category' },
+	{ type: 'checkbox', name: 'tag', label: 'Tag' },
+];

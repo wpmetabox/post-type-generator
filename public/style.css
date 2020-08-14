@@ -40,19 +40,25 @@ h2 {
 
 /** Elements **/
 form {
-  margin: 50px 0;
+  margin: 50px 0; }
+
+.cpt-basic-setting {
   display: flex; }
 
 .col-left {
   flex: 0 0 60%;
-  padding-right: 15px; }
+  padding: 15px; }
 
 .col-right {
   flex: 0 0 40%;
-  padding-left: 15px; }
-
-[class^=cpt] {
   padding: 15px; }
+  .col-right label {
+    display: block;
+    font-weight: normal;
+    margin: 8px 0;
+    cursor: pointer; }
+  .col-right [type=checkbox] {
+    margin-right: 8px; }
 
 label {
   width: 300px;

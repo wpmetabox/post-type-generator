@@ -1,11 +1,12 @@
 import React from 'react';
 import Input from './components/controls/Input';
 import Textarea from './components/controls/Textarea';
-import { BasicSettings, LabelSettings } from './constants/Data';
+import { BasicSettings, LabelSettings, Taxonomies } from './constants/Data';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { CopyBlock, dracula } from 'react-code-blocks';
 import PhpCode from './constants/PhpCode';
+import Checkbox from './components/controls/Checkbox';
 
 class App extends React.Component {
 	constructor(props) {
@@ -36,16 +37,25 @@ class App extends React.Component {
 
 			// Advanced
 
+			// Taxonomies
+			category: false,
+			tag     : false,
 
 			phpcode           : '',
 		};
 
-		this.updateState = this.updateState.bind(this);
+		this.updateText = this.updateText.bind(this);
+		this.updateCheck = this.updateCheck.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	updateState(e) {
+	updateText(e) {
 		this.setState( {[e.target.name]: e.target.value} );
+	}
+
+	updateCheck(e) {
+		const name = e.target.name;
+		this.setState( {[name]: ! this.state.[name]} );
 	}
 
 	handleSubmit(e) {
@@ -59,9 +69,11 @@ class App extends React.Component {
 		const renderControl = ( key, type, label, name, placeholder, required ) => {
 			switch (type) {
 				case 'text':
-					return <Input key={key} label={label} name={name} placeholder={placeholder} required={required} update={this.updateState} />
+					return <Input key={key} label={label} name={name} placeholder={placeholder} required={required} update={this.updateText} />
 				case 'textarea':
-					return <Textarea key={key} label={label} name={name} placeholder={placeholder} required={required} />
+					return <Textarea key={key} label={label} name={name} placeholder={placeholder} required={required} update={this.updateText} />
+				case 'checkbox':
+					return <Checkbox key={key} label={label} name={name} update={this.updateCheck} />
 				default:
 					break;
 			}
@@ -69,8 +81,8 @@ class App extends React.Component {
 
 		return (
 			<form onSubmit={this.handleSubmit}>
-				<div className="col-left">
-					<div className="cpt-basic-setting">
+				<div className="cpt-basic-setting">
+					<div className="col-left">
 						<h2>Basic Settings</h2>
 						{
 							Object.keys( BasicSettings ).map( ( key ) =>
@@ -79,45 +91,48 @@ class App extends React.Component {
 						}
 					</div>
 
-					<Tabs>
-						<TabList>
-							<Tab><h2>Advanced Settings</h2></Tab>
-							<Tab><h2>Label Settings</h2></Tab>
-							<Tab><button type="submit">Generate Code</button></Tab>
-						</TabList>
-
-						<TabPanel>
-							<h2>Any content</h2>
-						</TabPanel>
-						<TabPanel>
+					<div className="col-right">
+						<h2>Default Taxonomies</h2>
 						{
-							Object.keys( LabelSettings ).map( ( key ) =>
-								renderControl( key, LabelSettings[key].type, LabelSettings[key].label, LabelSettings[key].name, LabelSettings[key].placeholder, LabelSettings[key].required )
+							Object.keys( Taxonomies ).map( ( key ) =>
+								renderControl( key, Taxonomies[key].type, Taxonomies[key].label, Taxonomies[key].name, null, null )
 							)
 						}
-						</TabPanel>
-						<TabPanel>
-							<CopyBlock
-								text={this.state.phpcode}
-								language={'php'}
-								showLineNumbers={true}
-								theme={dracula}
-								wrapLines={true}
-								codeBlock
-								/>
-						</TabPanel>
-					</Tabs>
-				</div>
-
-				<div className="col-right">
-					<div className="cpt-support">
-						<h2>Supports</h2>
-					</div>
-					<div className="cpt-taxonomy">
-						<h2>Default Taxonomies</h2>
-
 					</div>
 				</div>
+
+				<Tabs>
+					<TabList>
+						<Tab><h2>Advanced Settings</h2></Tab>
+						<Tab><h2>Label Settings</h2></Tab>
+						<Tab><h2>Supports</h2></Tab>
+						<Tab><button type="submit">Generate Code</button></Tab>
+					</TabList>
+
+					<TabPanel>
+						<h2>Any content</h2>
+					</TabPanel>
+					<TabPanel>
+					{
+						Object.keys( LabelSettings ).map( ( key ) =>
+							renderControl( key, LabelSettings[key].type, LabelSettings[key].label, LabelSettings[key].name, LabelSettings[key].placeholder, LabelSettings[key].required )
+						)
+					}
+					</TabPanel>
+					<TabPanel>
+						<h2>Any content</h2>
+					</TabPanel>
+					<TabPanel>
+						<CopyBlock
+							text={this.state.phpcode}
+							language={'php'}
+							showLineNumbers={true}
+							theme={dracula}
+							wrapLines={true}
+							codeBlock
+							/>
+					</TabPanel>
+				</Tabs>
 			</form>
 		);
 	}
