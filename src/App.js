@@ -1,8 +1,8 @@
 import React, {forwardRef} from 'react';
 import Input from './components/controls/Input';
 import Textarea from './components/controls/Textarea';
-import Button from './components/controls/Button';
 import { BasicSettings } from './constants/Data';
+import { CopyBlock, dracula } from "react-code-blocks";
 
 class App extends React.Component {
 	constructor(props) {
@@ -23,9 +23,8 @@ class App extends React.Component {
 	updateState(e) {
 		this.setState( {[e.target.name]: e.target.value} );
 	}
-	
+
 	handleSubmit(e) {
-		console.log(this.state);
 		e.preventDefault();
 	}
 	
@@ -52,6 +51,20 @@ class App extends React.Component {
 					}
 				</section>
 				<button type="submit">Generate Code</button>
+
+				<section>
+					<CopyBlock
+						text={`<?php
+						echo "Hello World!";
+					  ?>
+					  `}
+						language={'php'}
+						showLineNumbers={true}
+						theme={dracula}
+						wrapLines={true}
+						codeBlock
+						/>
+				</section>
 			</form>
 		);
 	}

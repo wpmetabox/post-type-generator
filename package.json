@@ -4,18 +4,30 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"css": "node-sass --output-style compressed -x sass/style.scss -o src",
-		"watch": "node-sass -w sass -o src",
-		"start": "parcel ./src/index.html"
+		"css": "node-sass --output-style compressed -x sass/style.scss -o public",
+		"watch": "node-sass -w sass -o public",
+		"start": "react-scripts start",
+		"build": "react-scripts build"
 	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
 		"node-sass": "^4.14.1",
 		"react": "^16.13.1",
-		"react-dom": "^16.13.1"
+		"react-code-blocks": "^0.0.8",
+		"react-dom": "^16.13.1",
+		"react-scripts": "^3.4.3"
 	},
-	"devDependencies": {
-		"parcel-bundler": "^1.12.4"
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
 	}
 }
