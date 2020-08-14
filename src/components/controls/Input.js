@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import DivRow from '../elements/DivRow';
 
 const Input = ( {name, placeholder, update, ...rest} ) => {
