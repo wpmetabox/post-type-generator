@@ -1,8 +1,6 @@
-const PhpCode = ( settings ) => {
+const labelSettings = ( settings ) => {
 	return (
-`function ${settings.function_name}() {
-	$args = [
-		'label'  => esc_html__( '${settings.name}', 'text-domain' ),
+	`'label'  => esc_html__( '${settings.name}', 'text-domain' ),
 		'labels' => [
 			'menu_name'          => esc_html__( '${settings.menu_name}', '${settings.text_domain}' ),
 			'name_admin_bar'     => esc_html__( '${settings.name_admin_bar}', '${settings.text_domain}' ),
@@ -19,7 +17,53 @@ const PhpCode = ( settings ) => {
 			'not_found_in_trash' => esc_html__( '${settings.not_found_in_trash}', '${settings.text_domain}' ),
 			'name'               => esc_html__( '${settings.name}', '${settings.text_domain}' ),
 			'singular_name'      => esc_html__( '${settings.singular_name}', '${settings.text_domain}' ),
-		],
+		],`
+	);
+}
+
+const supportSettings = ( settings ) => {
+	const supports = [
+		'title',
+		'editor',
+		'author',
+		'thumbnail',
+		'excerpt',
+		'trackbacks',
+		'custom-fields',
+		'comments',
+		'revisions',
+		'page-attributes',
+	];
+
+	let temp = '';
+
+	supports.forEach( e => {
+		temp += settings[e] === true ? `\n\t\t\t'${e}',` : '';
+	} );
+
+	return '' === temp ? '' : `'supports' => [${temp}\n\t\t],`;
+}
+
+const taxonomySettings = ( settings ) => {
+	const taxonomies = [
+		'category',
+		'post_tag',
+	];
+
+	let temp = '';
+
+	taxonomies.forEach( e => {
+		temp += settings[e] === true ? `\n\t\t\t'${e}',` : '';
+	} );
+
+	return '' === temp ? '' : `'taxonomies' => [${temp}\n\t\t],`;
+}
+
+const PhpCode = ( settings ) => {
+	return (
+`function ${settings.function_name}() {
+	$args = [
+		${labelSettings( settings )}
 		'public'              => ${settings.public},
 		'exclude_from_search' => ${settings.exclude_from_search},
 		'publicly_queryable'  => ${settings.publicly_queryable},
@@ -35,22 +79,8 @@ const PhpCode = ( settings ) => {
 		'can_export'          => ${settings.can_export},
 		'rewrite_no_front'    => ${settings.rewrite_no_front},
 		'show_in_menu'        => 'index.php',
-		'supports'            => [
-			'title',
-			'editor',
-			'author',
-			'thumbnail',
-			'excerpt',
-			'trackbacks',
-			'custom-fields',
-			'comments',
-			'revisions',
-			'page-attributes',
-		],
-		'taxonomies' => [
-			'category',
-			'post_tag',
-		],
+		${supportSettings( settings )}
+		${taxonomySettings( settings )}
 		'rewrite' => ${settings.rewrite},
 	];
 

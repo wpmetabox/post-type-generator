@@ -17,7 +17,7 @@ const Control = ( {props} ) => {
 
 	const updateCheck = e => {
 		const name = e.target.name;
-		const value = ! state.name;
+		const value = e.target.checked;
 
 		setState( state => ( {...state, [name]: value} ) )
 	}
@@ -28,7 +28,7 @@ const Control = ( {props} ) => {
 		case 'textarea':
 			return <Textarea label={props.label} name={props.name} placeholder={props.placeholder} update={updateText} />
 		case 'checkbox':
-			return <Checkbox label={props.label} name={props.name} update={updateCheck} />
+			return <Checkbox label={props.label} name={props.name} update={updateCheck} checked={props.checked} />
 		default:
 			break;
 	}

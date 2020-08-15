@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Checkbox = ( {label, name, update} ) => {
+const Checkbox = ( {label, name, update, checked} ) => {
+	const [isChecked, updateCheck] = useState( checked );
+
+	const handleClick = () => {
+		updateCheck( ! isChecked );
+	}
+
 	return (
 		<label className="checkbox">
-			<input type="checkbox" id={name} name={name} onChange={update} />
+			<input type="checkbox" id={name} name={name} checked={isChecked} onChange={update} onClick={handleClick} />
 			{label}
 		</label>
 	)

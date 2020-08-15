@@ -22,18 +22,18 @@ export const LabelSettings = [
 ];
 
 export const SupportSettings = [
-	{ type: 'checkbox', name: 'title', label: 'Title' },
-	{ type: 'checkbox', name: 'editor', label: 'Editor' },
-	{ type: 'checkbox', name: 'author', label: 'Author' },
-	{ type: 'checkbox', name: 'thumbnail', label: 'Thumbnail' },
-	{ type: 'checkbox', name: 'trackbacks', label: 'Trackbacks' },
-	{ type: 'checkbox', name: 'custom-fields', label: 'Custom fields' },
-	{ type: 'checkbox', name: 'comments', label: 'Comments' },
-	{ type: 'checkbox', name: 'revisions', label: 'Revisions' },
-	{ type: 'checkbox', name: 'page-attributes', label: 'Page attributes' },
+	{ type: 'checkbox', name: 'title', label: 'Title', checked: true },
+	{ type: 'checkbox', name: 'editor', label: 'Editor', checked: true },
+	{ type: 'checkbox', name: 'author', label: 'Author', checked: false },
+	{ type: 'checkbox', name: 'thumbnail', label: 'Thumbnail', checked: true },
+	{ type: 'checkbox', name: 'trackbacks', label: 'Trackbacks', checked: false },
+	{ type: 'checkbox', name: 'custom-fields', label: 'Custom fields', checked: false },
+	{ type: 'checkbox', name: 'comments', label: 'Comments', checked: false },
+	{ type: 'checkbox', name: 'revisions', label: 'Revisions', checked: false },
+	{ type: 'checkbox', name: 'page-attributes', label: 'Page attributes', checked: false },
 ];
 
 export const TaxonomySettings = [
-	{ type: 'checkbox', name: 'category', label: 'Category' },
-	{ type: 'checkbox', name: 'tag', label: 'Tag' },
+	{ type: 'checkbox', name: 'category', label: 'Category', checked: false },
+	{ type: 'checkbox', name: 'tag', label: 'Tag', checked: false },
 ];
