@@ -54,34 +54,30 @@ h2 {
 }
 
 .cpt-basic-setting {
-	display: flex;
+	display: grid;
+	grid-template-columns: 60% 20% 20%;
 }
 
-.col-left {
+.col-6 {
 	flex: 0 0 60%;
 	padding: 15px;
 }
 
-.col-right {
-	flex: 0 0 40%;
+.col-3 {
+	flex: 0 0 20%;
 	padding: 15px;
-
-	label {
-		display: block;
-		font-weight: normal;
-		margin: 8px 0;
-		cursor: pointer;
-	}
-
-	[type=checkbox] {
-		margin-right: 8px;
-	}
 }
 
-
 label {
+	display: block;
 	width: 300px;
 	font-weight: bold;
+	cursor: pointer;
+
+	&.checkbox {
+		font-weight: normal;
+		margin: 8px 0;
+	}
 }
 
 [type=text] {
@@ -89,6 +85,10 @@ label {
 	padding: 0 8px;
 	height: 30px;
 	line-height: 30px;
+}
+
+[type=checkbox] {
+	margin-right: 8px;
 }
 
 textarea {

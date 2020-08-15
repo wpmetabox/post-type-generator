@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PhpSettings from './contexts/PhpSettings';
 import DefaultSettings from './constants/DefaultSettings';
-import { BasicSettings, LabelSettings, Taxonomies } from './constants/Data';
+import { BasicSettings, LabelSettings, TaxonomySettings, SupportSettings } from './constants/Data';
 import Control from './components/controls/Control';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -14,7 +14,7 @@ const App = () => {
 	return (
 		<PhpSettings.Provider value={[state, setState]}>
 			<div className="cpt-basic-setting">
-				<div className="col-left">
+				<div className="col-6">
 					<h2>Basic Settings</h2>
 					{
 						Object.keys( BasicSettings ).map( ( key ) =>
@@ -23,11 +23,20 @@ const App = () => {
 					}
 				</div>
 
-				<div className="col-right">
+				<div className="col-3">
+					<h2>Supports</h2>
+					{
+						Object.keys( SupportSettings ).map( ( key ) =>
+							<Control key={key} props={SupportSettings[key]} />
+						)
+					}
+				</div>
+
+				<div className="col-3">
 					<h2>Default Taxonomies</h2>
 					{
-						Object.keys( Taxonomies ).map( ( key ) =>
-							<Control key={key} props={Taxonomies[key]} />
+						Object.keys( TaxonomySettings ).map( ( key ) =>
+							<Control key={key} props={TaxonomySettings[key]} />
 						)
 					}
 				</div>
@@ -37,7 +46,6 @@ const App = () => {
 				<TabList>
 					<Tab><h2>Advanced Settings</h2></Tab>
 					<Tab><h2>Label Settings</h2></Tab>
-					<Tab><h2>Supports</h2></Tab>
 					<Tab><button type="submit">Generate Code</button></Tab>
 				</TabList>
 
@@ -50,9 +58,6 @@ const App = () => {
 						<Control key={key} props={LabelSettings[key]} />
 					)
 				}
-				</TabPanel>
-				<TabPanel>
-					<h2>Any content</h2>
 				</TabPanel>
 				<TabPanel>
 					<CopyBlock
