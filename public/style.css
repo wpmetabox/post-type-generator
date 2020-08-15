@@ -39,7 +39,7 @@ h2 {
   line-height: 2; }
 
 /** Elements **/
-form {
+#root {
   margin: 50px 0; }
 
 .cpt-basic-setting {

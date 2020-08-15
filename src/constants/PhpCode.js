@@ -1,43 +1,39 @@
-class PhpCode {
-	constructor( name ) {
-		this.name = name;
-	}
-
-	getCode() {
-		return `function ${this.function_name}() {
+const PhpCode = ( settings ) => {
+	return (
+`function ${settings.function_name}() {
 	$args = [
-		'label'  => esc_html__( '${this.name}', 'text-domain' ),
+		'label'  => esc_html__( '${settings.name}', 'text-domain' ),
 		'labels' => [
-			'menu_name'          => esc_html__( '${this.menu_name}', '${this.text_domain}' ),
-			'name_admin_bar'     => esc_html__( '${this.name_admin_bar}', '${this.text_domain}' ),
-			'add_new'            => esc_html__( '${this.add_new}', '${this.text_domain}' ),
-			'add_new_item'       => esc_html__( '${this.add_new_item}', '${this.text_domain}' ),
-			'new_item'           => esc_html__( '${this.new_item}', '${this.text_domain}' ),
-			'edit_item'          => esc_html__( '${this.edit_item}', '${this.text_domain}' ),
-			'view_item'          => esc_html__( '${this.view_item}', '${this.text_domain}' ),
-			'update_item'        => esc_html__( '${this.update_item}', '${this.text_domain}' ),
-			'all_items'          => esc_html__( '${this.all_items}', '${this.text_domain}' ),
-			'search_items'       => esc_html__( '${this.search_items}', '${this.text_domain}' ),
-			'parent_item_colon'  => esc_html__( '${this.parent_item_colon}', '${this.text_domain}' ),
-			'not_found'          => esc_html__( '${this.not_found}', '${this.text_domain}' ),
-			'not_found_in_trash' => esc_html__( '${this.not_found_in_trash}', '${this.text_domain}' ),
-			'name'               => esc_html__( '${this.name}', '${this.text_domain}' ),
-			'singular_name'      => esc_html__( '${this.singular_name}', '${this.text_domain}' ),
+			'menu_name'          => esc_html__( '${settings.menu_name}', '${settings.text_domain}' ),
+			'name_admin_bar'     => esc_html__( '${settings.name_admin_bar}', '${settings.text_domain}' ),
+			'add_new'            => esc_html__( '${settings.add_new}', '${settings.text_domain}' ),
+			'add_new_item'       => esc_html__( '${settings.add_new_item}', '${settings.text_domain}' ),
+			'new_item'           => esc_html__( '${settings.new_item}', '${settings.text_domain}' ),
+			'edit_item'          => esc_html__( '${settings.edit_item}', '${settings.text_domain}' ),
+			'view_item'          => esc_html__( '${settings.view_item}', '${settings.text_domain}' ),
+			'update_item'        => esc_html__( '${settings.update_item}', '${settings.text_domain}' ),
+			'all_items'          => esc_html__( '${settings.all_items}', '${settings.text_domain}' ),
+			'search_items'       => esc_html__( '${settings.search_items}', '${settings.text_domain}' ),
+			'parent_item_colon'  => esc_html__( '${settings.parent_item_colon}', '${settings.text_domain}' ),
+			'not_found'          => esc_html__( '${settings.not_found}', '${settings.text_domain}' ),
+			'not_found_in_trash' => esc_html__( '${settings.not_found_in_trash}', '${settings.text_domain}' ),
+			'name'               => esc_html__( '${settings.name}', '${settings.text_domain}' ),
+			'singular_name'      => esc_html__( '${settings.singular_name}', '${settings.text_domain}' ),
 		],
-		'public'              => ${this.public},
-		'exclude_from_search' => ${this.exclude_from_search},
-		'publicly_queryable'  => ${this.publicly_queryable},
-		'show_ui'             => ${this.show_ui},
-		'show_in_nav_menus'   => ${this.show_in_nav_menus},
-		'show_in_admin_bar'   => ${this.show_in_admin_bar},
-		'show_in_rest'        => ${this.show_in_rest},
+		'public'              => ${settings.public},
+		'exclude_from_search' => ${settings.exclude_from_search},
+		'publicly_queryable'  => ${settings.publicly_queryable},
+		'show_ui'             => ${settings.show_ui},
+		'show_in_nav_menus'   => ${settings.show_in_nav_menus},
+		'show_in_admin_bar'   => ${settings.show_in_admin_bar},
+		'show_in_rest'        => ${settings.show_in_rest},
 		'menu_position'       => 2,
 		'capability_type'     => 'post',
-		'hierarchical'        => ${this.hierarchical},
-		'has_archive'         => ${this.has_archive},
-		'query_var'           => ${this.query_var},
-		'can_export'          => ${this.can_export},
-		'rewrite_no_front'    => ${this.rewrite_no_front},
+		'hierarchical'        => ${settings.hierarchical},
+		'has_archive'         => ${settings.has_archive},
+		'query_var'           => ${settings.query_var},
+		'can_export'          => ${settings.can_export},
+		'rewrite_no_front'    => ${settings.rewrite_no_front},
 		'show_in_menu'        => 'index.php',
 		'supports'            => [
 			'title',
@@ -55,14 +51,14 @@ class PhpCode {
 			'category',
 			'post_tag',
 		],
-		'rewrite' => ${this.rewrite},
+		'rewrite' => ${settings.rewrite},
 	];
 
-	register_post_type( '${this.args_post_type}', $args );
+	register_post_type( '${settings.args_post_type}', $args );
 }
 
-add_action( 'init', '${this.function_name}' );`
-	}
+add_action( 'init', '${settings.function_name}' );`
+	);
 }
 
 export default PhpCode;
