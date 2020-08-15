@@ -23,15 +23,15 @@ const LabelSettings = {
 }
 
 export const SupportSettings = {
-	'title' : true,
-	'editor': true,
-	'author': false,
-	'thumbnail': true,
-	'excerpt': false,
-	'trackbacks': false,
-	'custom-fields': false,
-	'comments': false,
-	'revisions': false,
+	'title'          : true,
+	'editor'         : true,
+	'author'         : false,
+	'thumbnail'      : true,
+	'excerpt'        : false,
+	'trackbacks'     : false,
+	'custom-fields'  : false,
+	'comments'       : false,
+	'revisions'      : false,
 	'page-attributes': false,
 }
 
@@ -41,7 +41,20 @@ export const TaxonomySettings = {
 }
 
 export const AdvancedSettings = {
-
+	'description'        : '',
+	'public'             : true,
+	'exclude_from_search': false,
+	'publicly_queryable' : true,
+	'show_ui'            : true,
+	'show_in_nav_menus'  : true,
+	'show_in_admin_bar'  : true,
+	'show_in_rest'       : true,
+	'capability_type'    : 'post',
+	'hierarchical'       : false,
+	'has_archive'        : true,
+	'query_var'          : true,
+	'can_export'         : true,
+	'rewrite_no_front'   : false,
 }
 
 const DefaultSettings = {

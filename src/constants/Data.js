@@ -37,3 +37,26 @@ export const TaxonomyDatas = [
 	{ type: 'checkbox', name: 'category', label: 'Category', checked: false },
 	{ type: 'checkbox', name: 'tag', label: 'Tag', checked: false },
 ];
+
+export const AdvancedDatas = [
+	{ type: 'textarea', name: 'description', label: 'Description', placeholder: 'A short descriptive summary of what the post type is' },
+	{ type: 'checkbox', name: 'public', label: 'Public?', description: 'Controls how the type is visible to authors and readers.', checked: true },
+	{ type: 'checkbox', name: 'exclude_from_search', label: 'Exclude from search?', description: 'Whether to exclude posts with this post type from frontend search results.', checked: false },
+	{ type: 'checkbox', name: 'publicly_queryable', label: 'Publicly queryable?', description: 'Whether queries can be performed on the frontend.', checked: true },
+	{ type: 'checkbox', name: 'show_ui', label: ' Show UI? ', description: 'Whether queries can be performed on the frontend.', checked: true },
+	{ type: 'checkbox', name: 'show_in_nav_menus', label: 'Show in nav menus?', description: 'Whether queries can be performed on the frontend.', checked: true },
+	// select show in menu
+	{ type: 'checkbox', name: 'show_in_admin_bar', label: 'Show in admin bar?', description: 'Whether to make this post type available in the WordPress admin bar.', checked: true },
+	{ type: 'checkbox', name: 'show_in_rest', label: 'Show in admin bar?', description: 'Whether to add the post type in the REST API.', checked: true },
+	// text slug api
+	// select menu position
+	// radio icon
+	{ type: 'radio', name: 'capability_type', label: ' Capability type ', description: 'The post type to use for checking read, edit, and delete capabilities.' },
+	{ type: 'checkbox', name: 'hierarchical', label: 'Hierarchical?', description: 'Whether the post type is hierarchical.', checked: false },
+	{ type: 'checkbox', name: 'has_archive', label: 'Has archive?', description: 'Enables post type archives.', checked: true },
+	// text custom archive slug
+	{ type: 'checkbox', name: 'query_var', label: 'Query var', description: 'Enables post type archives.', checked: true },
+	{ type: 'checkbox', name: 'can_export', label: 'Can export?', description: 'Enables post type archives.', checked: true },
+	// { type: 'text', name: 'parent_item_colon', label: 'Custom rewrite slug', description: 'Leave empty to use the post type slug.' },
+	// { type: 'checkbox', name: 'can_export', label: 'No prepended permalink structure?', description: 'Do not prepend the permalink structure with the front base.', checked: false },
+];
