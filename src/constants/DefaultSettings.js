@@ -1,12 +1,12 @@
-const DefaultSettings = {
-	// Basic
+const BasicSettings = {
 	'name'          : '',
 	'singular_name' : '',
 	'args_post_type': '',
 	'function_name' : '',
 	'text_domain'   : '',
+}
 
-	// Labels
+const LabelSettings = {
 	'menu_name'         : '',
 	'name_admin_bar'    : '',
 	'add_new'           : '',
@@ -20,10 +20,9 @@ const DefaultSettings = {
 	'parent_item_colon' : '',
 	'not_found'         : '',
 	'not_found_in_trash': '',
+}
 
-	// Advanced
-
-	// Support
+export const SupportSettings = {
 	'title' : true,
 	'editor': true,
 	'author': false,
@@ -34,10 +33,23 @@ const DefaultSettings = {
 	'comments': false,
 	'revisions': false,
 	'page-attributes': false,
+}
 
-	// Taxonomies
+export const TaxonomySettings = {
 	'category': false,
 	'tag'     : false,
+}
+
+export const AdvancedSettings = {
+
+}
+
+const DefaultSettings = {
+	...BasicSettings,
+	...LabelSettings,
+	...SupportSettings,
+	...TaxonomySettings,
+	...AdvancedSettings
 };
 
 export default DefaultSettings;

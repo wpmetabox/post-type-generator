@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PhpSettings from './contexts/PhpSettings';
 import DefaultSettings from './constants/DefaultSettings';
-import { BasicSettings, LabelSettings, TaxonomySettings, SupportSettings } from './constants/Data';
+import { BasicDatas, LabelDatas, TaxonomyDatas, SupportDatas } from './constants/Data';
 import Control from './components/controls/Control';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -17,8 +17,8 @@ const App = () => {
 				<div className="col-6">
 					<h2>Basic Settings</h2>
 					{
-						Object.keys( BasicSettings ).map( ( key ) =>
-							<Control key={key} props={BasicSettings[key]} />
+						Object.keys( BasicDatas ).map( ( key ) =>
+							<Control key={key} props={BasicDatas[key]} />
 						)
 					}
 				</div>
@@ -26,8 +26,8 @@ const App = () => {
 				<div className="col-3">
 					<h2>Supports</h2>
 					{
-						Object.keys( SupportSettings ).map( ( key ) =>
-							<Control key={key} props={SupportSettings[key]} />
+						Object.keys( SupportDatas ).map( ( key ) =>
+							<Control key={key} props={SupportDatas[key]} />
 						)
 					}
 				</div>
@@ -35,8 +35,8 @@ const App = () => {
 				<div className="col-3">
 					<h2>Default Taxonomies</h2>
 					{
-						Object.keys( TaxonomySettings ).map( ( key ) =>
-							<Control key={key} props={TaxonomySettings[key]} />
+						Object.keys( TaxonomyDatas ).map( ( key ) =>
+							<Control key={key} props={TaxonomyDatas[key]} />
 						)
 					}
 				</div>
@@ -54,8 +54,8 @@ const App = () => {
 				</TabPanel>
 				<TabPanel>
 				{
-					Object.keys( LabelSettings ).map( ( key ) =>
-						<Control key={key} props={LabelSettings[key]} />
+					Object.keys( LabelDatas ).map( ( key ) =>
+						<Control key={key} props={LabelDatas[key]} />
 					)
 				}
 				</TabPanel>

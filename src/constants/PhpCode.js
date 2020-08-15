@@ -1,3 +1,5 @@
+import { SupportSettings, TaxonomySettings } from './DefaultSettings';
+
 const labelSettings = ( settings ) => {
 	return (
 	`'label'  => esc_html__( '${settings.name}', 'text-domain' ),
@@ -22,41 +24,23 @@ const labelSettings = ( settings ) => {
 }
 
 const supportSettings = ( settings ) => {
-	const supports = [
-		'title',
-		'editor',
-		'author',
-		'thumbnail',
-		'excerpt',
-		'trackbacks',
-		'custom-fields',
-		'comments',
-		'revisions',
-		'page-attributes',
-	];
-
 	let temp = '';
 
-	supports.forEach( e => {
-		temp += settings[e] === true ? `\n\t\t\t'${e}',` : '';
-	} );
+	for ( let key in SupportSettings ) {
+		temp += settings[key] === true ? `\n\t\t\t'${key}',` : '';
+	}
 
 	return '' === temp ? '' : `'supports' => [${temp}\n\t\t],`;
 }
 
 const taxonomySettings = ( settings ) => {
-	const taxonomies = [
-		'category',
-		'post_tag',
-	];
-
 	let temp = '';
 
-	taxonomies.forEach( e => {
-		temp += settings[e] === true ? `\n\t\t\t'${e}',` : '';
-	} );
+	for ( let key in TaxonomySettings ) {
+		temp += settings[key] === true ? `\n\t\t\t'${key}',` : '';
+	}
 
-	return '' === temp ? '' : `'taxonomies' => [${temp}\n\t\t],`;
+	return '' === temp ? '' : `\n\t\t'taxonomies' => [${temp}\n\t\t],`;
 }
 
 const PhpCode = ( settings ) => {
@@ -79,8 +63,7 @@ const PhpCode = ( settings ) => {
 		'can_export'          => ${settings.can_export},
 		'rewrite_no_front'    => ${settings.rewrite_no_front},
 		'show_in_menu'        => 'index.php',
-		${supportSettings( settings )}
-		${taxonomySettings( settings )}
+		${supportSettings( settings )}${taxonomySettings( settings )}
 		'rewrite' => ${settings.rewrite},
 	];
 

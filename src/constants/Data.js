@@ -1,4 +1,4 @@
-export const BasicSettings = [
+export const BasicDatas = [
 	{ type: 'text', name: 'name', label: 'Plural name', required: true, placeholder: 'General name for the post type' },
 	{ type: 'text', name: 'singular_name', label: 'Singular name', required: true, placeholder: 'Name for one object of the post type' },
 	{ type: 'text', name: 'args_post_type', label: 'Slug', required: true },
@@ -6,7 +6,7 @@ export const BasicSettings = [
 	{ type: 'text', name: 'text_domain', label: 'Text domain', placeholder: 'Your text domain' },
 ];
 
-export const LabelSettings = [
+export const LabelDatas = [
 	{ type: 'text', name: 'menu_name', label: 'Menu name', placeholder: 'The menu name text' },
 	{ type: 'text', name: 'name_admin_bar', label: 'Name in admin bar', placeholder: 'Name given for ther Add New dropdown' },
 	{ type: 'text', name: 'all_items', label: 'All items', placeholder: 'The all items text used in the menu' },
@@ -21,7 +21,7 @@ export const LabelSettings = [
 	{ type: 'text', name: 'parent_item_colon', label: 'Parent items', placeholder: 'The parent text' },
 ];
 
-export const SupportSettings = [
+export const SupportDatas = [
 	{ type: 'checkbox', name: 'title', label: 'Title', checked: true },
 	{ type: 'checkbox', name: 'editor', label: 'Editor', checked: true },
 	{ type: 'checkbox', name: 'author', label: 'Author', checked: false },
@@ -33,7 +33,7 @@ export const SupportSettings = [
 	{ type: 'checkbox', name: 'page-attributes', label: 'Page attributes', checked: false },
 ];
 
-export const TaxonomySettings = [
+export const TaxonomyDatas = [
 	{ type: 'checkbox', name: 'category', label: 'Category', checked: false },
 	{ type: 'checkbox', name: 'tag', label: 'Tag', checked: false },
 ];
