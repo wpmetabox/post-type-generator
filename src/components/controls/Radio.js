@@ -1,5 +1,4 @@
 import React from 'react';
-// 
 
 const Radio = ( {label, name, update, values, defaultValue} ) => {
 	return (
