@@ -22,20 +22,26 @@ export const LabelDatas = [
 ];
 
 export const SupportDatas = [
-	{ type: 'checkbox', name: 'title', label: 'Title', checked: true },
-	{ type: 'checkbox', name: 'editor', label: 'Editor', checked: true },
-	{ type: 'checkbox', name: 'author', label: 'Author', checked: false },
-	{ type: 'checkbox', name: 'thumbnail', label: 'Thumbnail', checked: true },
-	{ type: 'checkbox', name: 'trackbacks', label: 'Trackbacks', checked: false },
-	{ type: 'checkbox', name: 'custom-fields', label: 'Custom fields', checked: false },
-	{ type: 'checkbox', name: 'comments', label: 'Comments', checked: false },
-	{ type: 'checkbox', name: 'revisions', label: 'Revisions', checked: false },
-	{ type: 'checkbox', name: 'page-attributes', label: 'Page attributes', checked: false },
+	{ type: 'checkbox', name: 'title', description: 'Title', checked: true },
+	{ type: 'checkbox', name: 'editor', description: 'Editor', checked: true },
+	{ type: 'checkbox', name: 'author', description: 'Author', checked: false },
+	{ type: 'checkbox', name: 'thumbnail', description: 'Thumbnail', checked: true },
+	{ type: 'checkbox', name: 'trackbacks', description: 'Trackbacks', checked: false },
+	{ type: 'checkbox', name: 'custom-fields', description: 'Custom fields', checked: false },
+	{ type: 'checkbox', name: 'comments', description: 'Comments', checked: false },
+	{ type: 'checkbox', name: 'revisions', description: 'Revisions', checked: false },
+	{ type: 'checkbox', name: 'page-attributes', description: 'Page attributes', checked: false },
 ];
 
 export const TaxonomyDatas = [
-	{ type: 'checkbox', name: 'category', label: 'Category', checked: false },
-	{ type: 'checkbox', name: 'tag', label: 'Tag', checked: false },
+	{ type: 'checkbox', name: 'category', description: 'Category', checked: false },
+	{ type: 'checkbox', name: 'tag', description: 'Tag', checked: false },
+];
+
+const TaxDatas = [ 
+	{ type: 'post', label: 'Post' },
+	{ type: 'page', label: 'Page' },
+	{ type: 'custom', label: 'Custom' }
 ];
 
 export const AdvancedDatas = [
@@ -51,12 +57,12 @@ export const AdvancedDatas = [
 	// text slug api
 	// select menu position
 	// radio icon
-	{ type: 'radio', name: 'capability_type', label: ' Capability type ', description: 'The post type to use for checking read, edit, and delete capabilities.' },
+	{ type: 'radio', name: 'capability_type', label: 'Capability type', description: 'The post type to use for checking read, edit, and delete capabilities.', values: TaxDatas, defaultValue: 'post' },
 	{ type: 'checkbox', name: 'hierarchical', label: 'Hierarchical?', description: 'Whether the post type is hierarchical.', checked: false },
 	{ type: 'checkbox', name: 'has_archive', label: 'Has archive?', description: 'Enables post type archives.', checked: true },
 	// text custom archive slug
-	{ type: 'checkbox', name: 'query_var', label: 'Query var', description: 'Enables post type archives.', checked: true },
-	{ type: 'checkbox', name: 'can_export', label: 'Can export?', description: 'Enables post type archives.', checked: true },
+	{ type: 'checkbox', name: 'query_var', label: 'Query var', description: 'Enables request the post via URL: example.com/?post_type=slug', checked: true },
+	{ type: 'checkbox', name: 'can_export', label: 'Can export?', description: 'Can this post type be exported?', checked: true },
 	// { type: 'text', name: 'parent_item_colon', label: 'Custom rewrite slug', description: 'Leave empty to use the post type slug.' },
 	// { type: 'checkbox', name: 'can_export', label: 'No prepended permalink structure?', description: 'Do not prepend the permalink structure with the front base.', checked: false },
 ];

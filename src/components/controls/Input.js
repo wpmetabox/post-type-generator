@@ -1,11 +1,17 @@
 import React from 'react';
-import DivRow from '../elements/DivRow';
 
-const Input = ( {name, placeholder, update, ...rest} ) => {
+const Input = ( {label, name, placeholder, update, description = '', required = false} ) => {
 	return (
-		<DivRow htmlFor={name} {...rest}>
-			<input type="text" id={name} name={name} placeholder={placeholder} onChange={update} />
-		</DivRow>
+		<label htmlFor={name} className="row">
+			<div className="label">
+				{label}
+				{required && <span className="required">*</span>}
+			</div>
+			<div>
+				<input type="text" id={name} name={name} placeholder={placeholder} onChange={update} />
+				{description && <p className="description">{description}</p>}
+			</div>
+		</label>
 	)
 }
 

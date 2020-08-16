@@ -36,6 +36,24 @@ body {
 	flex-wrap: wrap;
 	align-items: center;
 	margin: 12px 0;
+
+	.row {
+		margin: 0;
+	}
+}
+
+.col-6 {
+	flex: 0 0 60%;
+	padding: 15px;
+}
+
+.col-3 {
+	flex: 0 0 20%;
+	padding: 15px;
+}
+
+.align-start {
+	align-items: start;
 }
 
 /** Typo **/
@@ -58,26 +76,22 @@ h2 {
 	grid-template-columns: 60% 20% 20%;
 }
 
-.col-6 {
-	flex: 0 0 60%;
-	padding: 15px;
-}
-
-.col-3 {
-	flex: 0 0 20%;
-	padding: 15px;
-}
-
 label {
-	display: block;
-	width: 300px;
 	font-weight: bold;
 	cursor: pointer;
 
-	&.checkbox {
+	label {
 		font-weight: normal;
-		margin: 8px 0;
+		margin-right: 30px;
 	}
+}
+
+.label {
+	width: 300px;
+}
+
+.description {
+	font-weight: normal;
 }
 
 [type=text] {
@@ -88,6 +102,12 @@ label {
 }
 
 [type=checkbox] {
+	margin-top: -1px;
+	margin-right: 8px;
+}
+
+[type=radio] {
+	margin-top: 4px;
 	margin-right: 8px;
 }
 
@@ -115,7 +135,7 @@ button {
 		display: flex;
 	}
 	&__tab-panel {
-		padding: 0 15px 100px;
+		padding: 15px 15px 100px;
 	}
 }
 

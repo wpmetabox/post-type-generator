@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PhpSettings from './contexts/PhpSettings';
 import DefaultSettings from './constants/DefaultSettings';
-import { BasicDatas, LabelDatas, TaxonomyDatas, SupportDatas } from './constants/Data';
+import { BasicDatas, LabelDatas, TaxonomyDatas, SupportDatas, AdvancedDatas } from './constants/Data';
 import Control from './components/controls/Control';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
@@ -50,7 +50,11 @@ const App = () => {
 				</TabList>
 
 				<TabPanel>
-					<h2>Any content</h2>
+				{
+					Object.keys( AdvancedDatas ).map( ( key ) =>
+						<Control key={key} props={AdvancedDatas[key]} />
+					)
+				}
 				</TabPanel>
 				<TabPanel>
 				{
