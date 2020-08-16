@@ -39,9 +39,27 @@ export const TaxonomyDatas = [
 ];
 
 const TaxDatas = [ 
-	{ type: 'post', label: 'Post' },
-	{ type: 'page', label: 'Page' },
-	{ type: 'custom', label: 'Custom' }
+	{ value: 'post', label: 'Post' },
+	{ value: 'page', label: 'Page' },
+	{ value: 'custom', label: 'Custom' }
+];
+
+const ShowInMenuData = [
+	{ name: 'show_in_menu', value: 0, label: 'Select an item' },
+	{ name: 'show_in_menu', value: true, label: 'Show as top-level menu' },
+	{ name: 'show_in_menu', value: false, label: 'Do not show in the admin menu' },
+	{ name: 'show_in_menu', value: 'index.php', label: 'Show as sub-menu of Dashboard' },
+	{ name: 'show_in_menu', value: 'upload.php', label: 'Show as sub-menu of Media' },
+	{ name: 'show_in_menu', value: 'edit-tags.php?taxonomy=link_category', label: 'Show as sub-menu of Links' },
+	{ name: 'show_in_menu', value: 'edit-comments.php', label: 'Show as sub-menu of Comments ' },
+	{ name: 'show_in_menu', value: 'edit.php', label: 'Show as sub-menu of Posts' },
+	{ name: 'show_in_menu', value: 'edit.php?post_value=page', label: 'Show as sub-menu of Pages' },
+	{ name: 'show_in_menu', value: 'themes.php', label: 'Show as sub-menu of Appearance' },
+	{ name: 'show_in_menu', value: 'plugins.php', label: 'Show as sub-menu of Plugins' },
+	{ name: 'show_in_menu', value: 'users.php', label: 'Show as sub-menu of Users' },
+	{ name: 'show_in_menu', value: 'tools.php', label: 'Show as sub-menu of Tools' },
+	{ name: 'show_in_menu', value: 'options-general.php', label: 'Show as sub-menu of Settings' },
+	{ name: 'show_in_menu', value: 'meta-box', label: 'Show as sub-menu of Meta Box' },
 ];
 
 export const AdvancedDatas = [
@@ -51,7 +69,7 @@ export const AdvancedDatas = [
 	{ type: 'checkbox', name: 'publicly_queryable', label: 'Publicly queryable?', description: 'Whether queries can be performed on the frontend.', checked: true },
 	{ type: 'checkbox', name: 'show_ui', label: ' Show UI? ', description: 'Whether queries can be performed on the frontend.', checked: true },
 	{ type: 'checkbox', name: 'show_in_nav_menus', label: 'Show in nav menus?', description: 'Whether queries can be performed on the frontend.', checked: true },
-	// select show in menu
+	{ type: 'select', name: 'show_in_menu', label: 'Show in menu?', description: 'Where to show the post type in the admin menu. show_ui must be true.', values: ShowInMenuData, defaultValue: 0 },
 	{ type: 'checkbox', name: 'show_in_admin_bar', label: 'Show in admin bar?', description: 'Whether to make this post type available in the WordPress admin bar.', checked: true },
 	{ type: 'checkbox', name: 'show_in_rest', label: 'Show in admin bar?', description: 'Whether to add the post type in the REST API.', checked: true },
 	// text slug api

@@ -6,7 +6,8 @@
   --text-md: 16px;
   --text-lg: 18px;
   --accent-color: #007cba;
-  --secondary-color: #ffffff; }
+  --secondary-color: #ffffff;
+  --border-color: #7e8993; }
 
 * {
   margin: 0;
@@ -112,3 +113,8 @@ button {
   color: red;
   font-weight: bold;
   margin-left: 3px; }
+
+#show_in_menu > div {
+  font-weight: normal;
+  border-color: var(--border-color);
+  border-radius: 2px !important; }

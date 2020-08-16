@@ -62,7 +62,7 @@ const PhpCode = ( settings ) => {
 		'query_var'           => ${settings.query_var},
 		'can_export'          => ${settings.can_export},
 		'rewrite_no_front'    => ${settings.rewrite_no_front},
-		'show_in_menu'        => 'index.php',
+		'show_in_menu'        => ${settings.show_in_menu},
 		${supportSettings( settings )}${taxonomySettings( settings )}
 		'rewrite' => ${settings.rewrite},
 	];
