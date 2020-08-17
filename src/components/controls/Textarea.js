@@ -8,7 +8,7 @@ const Textarea = ( {label, name, placeholder, update, description = '', required
 		</div>
 		<div>
 			<textarea id={name} name={name} placeholder={placeholder} onChange={update} />
-			{description && <p className="description">{description}</p>}
+			{description && <p className="description"><i>{description}</i></p>}
 		</div>
 	</label>
 )

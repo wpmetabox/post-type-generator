@@ -78,9 +78,9 @@ export const AdvancedDatas = [
 	{ type: 'radio', name: 'capability_type', label: 'Capability type', description: 'The post type to use for checking read, edit, and delete capabilities.', values: TaxDatas, defaultValue: 'post' },
 	{ type: 'checkbox', name: 'hierarchical', label: 'Hierarchical?', description: 'Whether the post type is hierarchical.', checked: false },
 	{ type: 'checkbox', name: 'has_archive', label: 'Has archive?', description: 'Enables post type archives.', checked: true },
-	// text custom archive slug
+	{ type: 'text', name: 'archive_slug', label: 'Custom archive slug', description: 'Default is the post type slug.' },
 	{ type: 'checkbox', name: 'query_var', label: 'Query var', description: 'Enables request the post via URL: example.com/?post_type=slug', checked: true },
 	{ type: 'checkbox', name: 'can_export', label: 'Can export?', description: 'Can this post type be exported?', checked: true },
-	// { type: 'text', name: 'parent_item_colon', label: 'Custom rewrite slug', description: 'Leave empty to use the post type slug.' },
-	// { type: 'checkbox', name: 'can_export', label: 'No prepended permalink structure?', description: 'Do not prepend the permalink structure with the front base.', checked: false },
+	{ type: 'text', name: 'rewrite_slug', label: 'Custom rewrite slug', description: 'Leave empty to use the post type slug.' },
+	{ type: 'checkbox', name: 'rewrite_no_front_description', label: 'No prepended permalink structure?', description: 'Do not prepend the permalink structure with the front base.', checked: false },
 ];

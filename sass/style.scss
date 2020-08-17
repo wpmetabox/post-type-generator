@@ -7,9 +7,10 @@
 	--text-md: 16px;
 	--text-lg: 18px;
 
-	--accent-color: #007cba;
-	--secondary-color: #ffffff;
-	--border-color: #7e8993;
+	--color-accent: #007cba;
+	--color-secondary: #ffffff;
+	--color-text: #444;
+	--color-border: #7e8993;
 }
 
 * {
@@ -21,6 +22,7 @@ body {
 	font-family: var(--font-sans);
 	font-size: var(--text-sm);
 	line-height: 1.5;
+	color: var(--color-text);
 }
 
 /** Layout **/
@@ -36,7 +38,7 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	margin: 12px 0;
+	margin: 15px 0;
 
 	.row {
 		margin: 0;
@@ -119,8 +121,8 @@ textarea {
 }
 
 button {
-	background-color: var(--accent-color);
-	color: var(--secondary-color);
+	background-color: var(--color-accent);
+	color: var(--color-secondary);
 	border: 0;
 	padding: 8px 10px;
 	border-radius: 2px;
@@ -138,6 +140,11 @@ button {
 	&__tab-panel {
 		padding: 15px 15px 100px;
 	}
+	&__tab--selected {
+		h2 {
+			color: var(--color-text);
+		}
+	}
 }
 
 /** Common **/
@@ -149,6 +156,6 @@ button {
 
 #show_in_menu > div {
 	font-weight: normal;
-	border-color: var(--border-color);
+	color-border: var(--color-border);
 	border-radius: 2px !important;
 }

@@ -42,7 +42,7 @@ const App = () => {
 				</div>
 			</div>
 
-			<Tabs>
+			<Tabs forceRenderTabPanel={true}>
 				<TabList>
 					<Tab><h2>Advanced Settings</h2></Tab>
 					<Tab><h2>Label Settings</h2></Tab>

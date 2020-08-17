@@ -34,9 +34,9 @@ const Control = ( {props} ) => {
 
 	switch (props.type) {
 		case 'text':
-			return <Input label={props.label} name={props.name} placeholder={props.placeholder} required={props.required} update={handleUpdate} />
+			return <Input label={props.label} name={props.name} placeholder={props.placeholder} description={props.description} required={props.required} update={handleUpdate} />
 		case 'textarea':
-			return <Textarea label={props.label} name={props.name} placeholder={props.placeholder} update={handleUpdate} />
+			return <Textarea label={props.label} name={props.name} placeholder={props.placeholder} description={props.description} update={handleUpdate} />
 		case 'checkbox':
 			return <Checkbox label={props.label} name={props.name} description={props.description} update={handleUpdate} checked={props.checked} />
 		case 'radio':

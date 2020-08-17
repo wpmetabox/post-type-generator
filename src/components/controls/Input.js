@@ -9,7 +9,7 @@ const Input = ( {label, name, placeholder, update, description = '', required = 
 			</div>
 			<div>
 				<input type="text" id={name} name={name} placeholder={placeholder} onChange={update} />
-				{description && <p className="description">{description}</p>}
+				{description && <p className="description"><i>{description}</i></p>}
 			</div>
 		</label>
 	)

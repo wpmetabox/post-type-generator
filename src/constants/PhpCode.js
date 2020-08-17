@@ -58,7 +58,7 @@ const PhpCode = ( settings ) => {
 		'menu_position'       => 2,
 		'capability_type'     => '${settings.capability_type}',
 		'hierarchical'        => ${settings.hierarchical},
-		'has_archive'         => ${settings.has_archive},
+		'has_archive'         => ${settings.archive_slug ? `'${settings.archive_slug}'` : true},
 		'query_var'           => ${settings.query_var},
 		'can_export'          => ${settings.can_export},
 		'rewrite_no_front'    => ${settings.rewrite_no_front},
