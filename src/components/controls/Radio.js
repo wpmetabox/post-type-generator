@@ -10,8 +10,9 @@ const Radio = ( {label, name, update, values, defaultValue} ) => {
 				{
 					values.map( ( item, key ) => {
 						return (
-							<label key={key}>
+							<label key={key} className={item.icon && "icon-single"}>
 								<input type="radio" name={name} value={item.value} defaultChecked={item.value === defaultValue && "checked" } onChange={update} />
+								{item.icon && <i className={item.icon + " wp-menu-image dashicons-before"}></i>}
 								{item.label}
 							</label>
 						)

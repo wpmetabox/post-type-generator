@@ -55,6 +55,7 @@ const PhpCode = ( settings ) => {
 		'show_in_nav_menus'   => ${settings.show_in_nav_menus},
 		'show_in_admin_bar'   => ${settings.show_in_admin_bar},
 		'show_in_rest'        => ${settings.show_in_rest},
+		'menu_icon'           => '${settings.menu_icon}',
 		'menu_position'       => 2,
 		'capability_type'     => '${settings.capability_type}',
 		'hierarchical'        => ${settings.hierarchical},

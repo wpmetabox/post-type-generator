@@ -1,3 +1,5 @@
+import { Icons } from './Icons';
+
 export const BasicDatas = [
 	{ type: 'text', name: 'name', label: 'Plural name', required: true, placeholder: 'General name for the post type' },
 	{ type: 'text', name: 'singular_name', label: 'Singular name', required: true, placeholder: 'Name for one object of the post type' },
@@ -75,6 +77,7 @@ export const AdvancedDatas = [
 	// text slug api
 	// select menu position
 	// radio icon
+	{ type: 'radio', name: 'menu_icon', label: 'Menu icon', values: Icons },
 	{ type: 'radio', name: 'capability_type', label: 'Capability type', description: 'The post type to use for checking read, edit, and delete capabilities.', values: TaxDatas, defaultValue: 'post' },
 	{ type: 'checkbox', name: 'hierarchical', label: 'Hierarchical?', description: 'Whether the post type is hierarchical.', checked: false },
 	{ type: 'checkbox', name: 'has_archive', label: 'Has archive?', description: 'Enables post type archives.', checked: true },

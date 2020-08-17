@@ -23,6 +23,7 @@ body {
 	font-size: var(--text-sm);
 	line-height: 1.5;
 	color: var(--color-text);
+	box-sizing: border-box;
 }
 
 /** Layout **/
@@ -158,4 +159,41 @@ button {
 	font-weight: normal;
 	color-border: var(--color-border);
 	border-radius: 2px !important;
+}
+
+@import "./dashicons";
+
+#menu_icon {
+	align-items: start;
+
+	.row {
+		width: calc( 100% - 300px );
+	}
+}
+
+.icon-single {
+	position: relative;
+	display: inline-block;
+	margin: 0 5px 5px 0;
+	
+	i {
+		border: 1px solid var(--color-border);
+		border-radius: 3px;
+		text-align: center;
+		width: 36px;
+		height: 36px;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	[type=radio] {
+		position: absolute;
+		opacity: 0;
+
+		&:checked ~ i {
+			color: var(--color-secondary);
+			background-color: var(--color-accent);
+		}
+	}
 }
