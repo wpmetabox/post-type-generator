@@ -1,6 +1,12 @@
 import React from 'react';
 import Select from 'react-select'
 
+const customStyles = {
+	control: () => ({
+		width: 400,
+	} ),
+}
+
 const Dropdown = ( {label, name, update, description = '', values, defaultValue} ) => {
 	return (
 		<label className="row align-start">

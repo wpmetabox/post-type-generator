@@ -1,5 +1,5 @@
 :root {
-  --font-sans: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --text-sm: 14px;
@@ -120,10 +120,14 @@ button {
   font-weight: bold;
   margin-left: 3px; }
 
-#show_in_menu > div {
-  font-weight: normal;
-  color-border: var(--color-border);
-  border-radius: 2px !important; }
+#show_in_menu,
+#menu_position {
+  width: 400px; }
+  #show_in_menu > div,
+  #menu_position > div {
+    font-weight: normal;
+    border-radius: 2px;
+    border-color: var(--color-border); }
 
 @font-face {
   font-family: dashicons;
@@ -1204,7 +1208,7 @@ button {
 #menu_icon {
   align-items: start; }
   #menu_icon .row {
-    width: calc( 100% - 300px); }
+    width: calc(100% - 300px); }
 
 .icon-single {
   position: relative;

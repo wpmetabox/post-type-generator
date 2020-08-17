@@ -1,6 +1,6 @@
 import { SupportSettings, TaxonomySettings } from './DefaultSettings';
 
-const labelSettings = ( settings ) => {
+const labelSettings = settings => {
 	return (
 	`'label'  => esc_html__( '${settings.name}', 'text-domain' ),
 		'labels' => [
@@ -23,7 +23,7 @@ const labelSettings = ( settings ) => {
 	);
 }
 
-const supportSettings = ( settings ) => {
+const supportSettings = settings => {
 	let temp = '';
 
 	for ( let key in SupportSettings ) {
@@ -33,7 +33,7 @@ const supportSettings = ( settings ) => {
 	return '' === temp ? '' : `'supports' => [${temp}\n\t\t],`;
 }
 
-const taxonomySettings = ( settings ) => {
+const taxonomySettings = settings => {
 	let temp = '';
 
 	for ( let key in TaxonomySettings ) {
@@ -43,7 +43,30 @@ const taxonomySettings = ( settings ) => {
 	return '' === temp ? '' : `\n\t\t'taxonomies' => [${temp}\n\t\t],`;
 }
 
-const PhpCode = ( settings ) => {
+const menuIcon = settings => {
+	let result = `'menu_icon' => '`; 
+	return undefined !== settings.menu_icon ? `${result + settings.menu_icon}',` : '';
+}
+
+const restBase = settings => {
+	let result = `'rest_base' => '`;
+	return undefined !== settings.rest_base ? `${result + settings.rest_base}',` : '';;
+}
+
+const reWrite = settings => {
+	let result = `'rewrite' => `;
+
+	const rewrite_slug = undefined === settings.rewrite_slug ? '' : `'slug' => '${settings.rewrite_slug}'`;
+	const rewrite_no_front = undefined === settings.rewrite_no_front || false === settings.rewrite_no_front ? '' : ` 'with_front' => false`;
+
+	if ( '' === rewrite_slug && '' === rewrite_no_front ) {
+		return result + 'true';
+	}
+
+	return result + `[ ${rewrite_slug},${rewrite_no_front} ]`;
+}
+
+const PhpCode = settings => {
 	return (
 `function ${settings.function_name}() {
 	$args = [
@@ -55,7 +78,6 @@ const PhpCode = ( settings ) => {
 		'show_in_nav_menus'   => ${settings.show_in_nav_menus},
 		'show_in_admin_bar'   => ${settings.show_in_admin_bar},
 		'show_in_rest'        => ${settings.show_in_rest},
-		'menu_icon'           => '${settings.menu_icon}',
 		'menu_position'       => 2,
 		'capability_type'     => '${settings.capability_type}',
 		'hierarchical'        => ${settings.hierarchical},
@@ -64,8 +86,11 @@ const PhpCode = ( settings ) => {
 		'can_export'          => ${settings.can_export},
 		'rewrite_no_front'    => ${settings.rewrite_no_front},
 		'show_in_menu'        => ${settings.show_in_menu},
-		${supportSettings( settings )}${taxonomySettings( settings )}
-		'rewrite' => ${settings.rewrite},
+		${menuIcon( settings )}
+		${restBase( settings )}
+		${supportSettings( settings )}
+		${taxonomySettings( settings )}
+		${reWrite( settings )}
 	];
 
 	register_post_type( '${settings.args_post_type}', $args );

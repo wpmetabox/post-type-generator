@@ -64,6 +64,21 @@ const ShowInMenuData = [
 	{ name: 'show_in_menu', value: 'meta-box', label: 'Show as sub-menu of Meta Box' },
 ];
 
+const MenuPosition = [
+	{ name: 'menu_position', value: 2, label: 'Dashboard' },
+	{ name: 'menu_position', value: 5, label: 'Posts' },
+	{ name: 'menu_position', value: 10, label: 'Media' },
+	{ name: 'menu_position', value: 15, label: 'Links' },
+	{ name: 'menu_position', value: 20, label: 'Pages' },
+	{ name: 'menu_position', value: 25, label: 'Comments' },
+	{ name: 'menu_position', value: 60, label: 'Appearance' },
+	{ name: 'menu_position', value: 65, label: 'Plugins' },
+	{ name: 'menu_position', value: 70, label: 'Users' },
+	{ name: 'menu_position', value: 75, label: 'Tools' },
+	{ name: 'menu_position', value: 80, label: 'Settings' },
+	{ name: 'menu_position', value: 100, label: 'Metabox' },
+];
+
 export const AdvancedDatas = [
 	{ type: 'textarea', name: 'description', label: 'Description', placeholder: 'A short descriptive summary of what the post type is' },
 	{ type: 'checkbox', name: 'public', label: 'Public?', description: 'Controls how the type is visible to authors and readers.', checked: true },
@@ -74,9 +89,8 @@ export const AdvancedDatas = [
 	{ type: 'select', name: 'show_in_menu', label: 'Show in menu?', description: 'Where to show the post type in the admin menu. show_ui must be true.', values: ShowInMenuData, defaultValue: 0 },
 	{ type: 'checkbox', name: 'show_in_admin_bar', label: 'Show in admin bar?', description: 'Whether to make this post type available in the WordPress admin bar.', checked: true },
 	{ type: 'checkbox', name: 'show_in_rest', label: 'Show in admin bar?', description: 'Whether to add the post type in the REST API.', checked: true },
-	// text slug api
-	// select menu position
-	// radio icon
+	{ type: 'text', name: 'rest_base', label: 'REST API base slug', description: 'Leave empty to use the post type slug.', placeholder: 'Slug to use in REST API URL' },
+	{ type: 'select', name: 'menu_position', label: 'Menu position after', values: MenuPosition },
 	{ type: 'radio', name: 'menu_icon', label: 'Menu icon', values: Icons },
 	{ type: 'radio', name: 'capability_type', label: 'Capability type', description: 'The post type to use for checking read, edit, and delete capabilities.', values: TaxDatas, defaultValue: 'post' },
 	{ type: 'checkbox', name: 'hierarchical', label: 'Hierarchical?', description: 'Whether the post type is hierarchical.', checked: false },
@@ -85,5 +99,5 @@ export const AdvancedDatas = [
 	{ type: 'checkbox', name: 'query_var', label: 'Query var', description: 'Enables request the post via URL: example.com/?post_type=slug', checked: true },
 	{ type: 'checkbox', name: 'can_export', label: 'Can export?', description: 'Can this post type be exported?', checked: true },
 	{ type: 'text', name: 'rewrite_slug', label: 'Custom rewrite slug', description: 'Leave empty to use the post type slug.' },
-	{ type: 'checkbox', name: 'rewrite_no_front_description', label: 'No prepended permalink structure?', description: 'Do not prepend the permalink structure with the front base.', checked: false },
+	{ type: 'checkbox', name: 'rewrite_no_front', label: 'No prepended permalink structure?', description: 'Do not prepend the permalink structure with the front base.', checked: false },
 ];
