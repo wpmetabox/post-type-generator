@@ -10,23 +10,8 @@
   --color-text: #444;
   --color-border: #7e8993; }
 
-* {
-  margin: 0;
-  padding: 0; }
-
 body {
-  font-family: var(--font-sans);
-  font-size: var(--text-sm);
-  line-height: 1.5;
-  color: var(--color-text);
-  box-sizing: border-box; }
-
-/** Layout **/
-.container {
-  margin: 0 auto; }
-  @media all and (min-width: 1200px) {
-    .container {
-      max-width: 1200px; } }
+  background: #fff; }
 
 .row {
   display: flex;

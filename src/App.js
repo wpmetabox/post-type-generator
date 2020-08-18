@@ -13,40 +13,34 @@ const App = () => {
 
 	return (
 		<PhpSettings.Provider value={[state, setState]}>
-			<div className="cpt-basic-setting">
-				<div className="col-6">
-					<h2>Basic Settings</h2>
-					{ Object.keys( BasicDatas ).map( key => <Control key={key} props={BasicDatas[key]} /> ) }
-				</div>
-
-				<div className="col-3">
-					<h2>Supports</h2>
-					{ Object.keys( SupportDatas ).map( key => <Control key={key} props={SupportDatas[key]} /> ) }
-				</div>
-
-				<div className="col-3">
-					<h2>Default Taxonomies</h2>
-					{ Object.keys( TaxonomyDatas ).map( key => <Control key={key} props={TaxonomyDatas[key]} /> ) }
-				</div>
-			</div>
-
 			<Tabs forceRenderTabPanel={true}>
 				<TabList>
-					<Tab><h2>Advanced Settings</h2></Tab>
-					<Tab><h2>Label Settings</h2></Tab>
-					<Tab><button>Generate Code</button></Tab>
+					<Tab>General</Tab>
+					<Tab>Labels</Tab>
+					<Tab>Advanced</Tab>
+					<Tab>Supports</Tab>
+					<Tab>Taxonomies</Tab>
 				</TabList>
 
 				<TabPanel>
-					{ Object.keys( AdvancedDatas ).map( key => <Control key={key} props={AdvancedDatas[key]} /> ) }
+					{ Object.keys( BasicDatas ).map( key => <Control key={key} props={BasicDatas[key]} /> ) }
 				</TabPanel>
 				<TabPanel>
 					{ Object.keys( LabelDatas ).map( key => <Control key={key} props={LabelDatas[key]} /> ) }
 				</TabPanel>
 				<TabPanel>
-					<CopyBlock text={PhpCode( state )} language={'php'} showLineNumbers={true} theme={dracula} wrapLines={true} codeBlock />
+					{ Object.keys( AdvancedDatas ).map( key => <Control key={key} props={AdvancedDatas[key]} /> ) }
+				</TabPanel>
+				<TabPanel>
+					{ Object.keys( SupportDatas ).map( key => <Control key={key} props={SupportDatas[key]} /> ) }
+				</TabPanel>
+				<TabPanel>
+					{ Object.keys( TaxonomyDatas ).map( key => <Control key={key} props={TaxonomyDatas[key]} /> ) }
 				</TabPanel>
 			</Tabs>
+
+			<button>Generate Code</button>
+			<CopyBlock text={PhpCode( state )} language={'php'} showLineNumbers={true} theme={dracula} wrapLines={true} codeBlock />
 		</PhpSettings.Provider>
 	);
 }
