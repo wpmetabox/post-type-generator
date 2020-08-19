@@ -40,7 +40,7 @@ export const TaxonomyDatas = [
 	{ type: 'checkbox', name: 'tag', description: 'Tag', checked: false },
 ];
 
-const TaxDatas = [ 
+const TaxDatas = [
 	{ value: 'post', label: 'Post' },
 	{ value: 'page', label: 'Page' },
 	{ value: 'custom', label: 'Custom' }
@@ -60,8 +60,7 @@ const ShowInMenuData = [
 	{ name: 'show_in_menu', value: 'plugins.php', label: 'Show as sub-menu of Plugins' },
 	{ name: 'show_in_menu', value: 'users.php', label: 'Show as sub-menu of Users' },
 	{ name: 'show_in_menu', value: 'tools.php', label: 'Show as sub-menu of Tools' },
-	{ name: 'show_in_menu', value: 'options-general.php', label: 'Show as sub-menu of Settings' },
-	{ name: 'show_in_menu', value: 'meta-box', label: 'Show as sub-menu of Meta Box' },
+	{ name: 'show_in_menu', value: 'options-general.php', label: 'Show as sub-menu of Settings' }
 ];
 
 const MenuPosition = [

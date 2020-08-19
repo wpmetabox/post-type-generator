@@ -1,17 +1,16 @@
 import React from 'react';
-import Select from 'react-select'
 
 const Dropdown = ( {label, name, update, description = '', values, defaultValue} ) => {
 	return (
-		<label className="ptg-row align-start">
-			<div className="ptg-label">
-				{label}
+		<div className="ptg-field">
+			<label className="ptg-label" htmlFor={name}>{label}</label>
+			<div className="ptg-input">
+				<select id={name} name={name} options={values} defaultValue={defaultValue} isSearchable onChange={update}>
+					{values.map(value => <option value={value.value}>{value.label}</option>)}
+				</select>
+				{description && <div className="ptg-description">{description}</div>}
 			</div>
-			<div>
-				<Select id={name} name={name} options={values} defaultValue={defaultValue} isSearchable onChange={update} />
-				{description && <p className="ptg-description"><i>{description}</i></p>}
-			</div>
-		</label>
+		</div>
 	)
 }
 
