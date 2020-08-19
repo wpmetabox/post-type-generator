@@ -11,6 +11,10 @@ import PhpCode from './constants/PhpCode';
 const App = () => {
 	const [state, setState] = useState( DefaultSettings );
 
+	const showCodeBlock = () => {
+		setState( state => ( {...state, show_code: true} ) )
+	}
+
 	return (
 		<PhpSettings.Provider value={[state, setState]}>
 			<Tabs forceRenderTabPanel={true}>
@@ -39,8 +43,8 @@ const App = () => {
 				</TabPanel>
 			</Tabs>
 
-			<button>Generate Code</button>
-			<CopyBlock text={PhpCode( state )} language={'php'} showLineNumbers={true} theme={dracula} wrapLines={true} codeBlock />
+			<button className="ptg-button" onClick={showCodeBlock}>Generate Code</button>
+			{ true === state.show_code && <CopyBlock text={PhpCode( state )} language={'php'} showLineNumbers={true} theme={dracula} wrapLines={true} codeBlock /> }
 		</PhpSettings.Provider>
 	);
 }

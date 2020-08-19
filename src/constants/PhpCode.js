@@ -30,7 +30,7 @@ const supportSettings = settings => {
 		temp += settings[key] === true ? `\n\t\t\t'${key}',` : '';
 	}
 
-	return '' === temp ? '' : `'supports' => [${temp}\n\t\t],`;
+	return '' === temp ? '' : `\t'supports' => [${temp}\n\t\t],`;
 }
 
 const taxonomySettings = settings => {
@@ -49,12 +49,12 @@ const menuIcon = settings => {
 }
 
 const restBase = settings => {
-	let result = `'rest_base' => '`;
+	let result = `\n\t\t'rest_base' => '`;
 	return undefined !== settings.rest_base ? `${result + settings.rest_base}',` : '';;
 }
 
 const reWrite = settings => {
-	let result = `'rewrite' => `;
+	let result = `\n\t\t'rewrite' => `;
 
 	const rewrite_slug = undefined === settings.rewrite_slug ? '' : `'slug' => '${settings.rewrite_slug}'`;
 	const rewrite_no_front = undefined === settings.rewrite_no_front || false === settings.rewrite_no_front ? '' : ` 'with_front' => false`;
@@ -66,11 +66,8 @@ const reWrite = settings => {
 	return result + `[ ${rewrite_slug},${rewrite_no_front} ]`;
 }
 
-const PhpCode = settings => {
-	return (
-`function ${settings.function_name}() {
-	$args = [
-		${labelSettings( settings )}
+const advanceSettings = settings => {
+	return `
 		'public'              => ${settings.public},
 		'exclude_from_search' => ${settings.exclude_from_search},
 		'publicly_queryable'  => ${settings.publicly_queryable},
@@ -78,19 +75,22 @@ const PhpCode = settings => {
 		'show_in_nav_menus'   => ${settings.show_in_nav_menus},
 		'show_in_admin_bar'   => ${settings.show_in_admin_bar},
 		'show_in_rest'        => ${settings.show_in_rest},
-		'menu_position'       => 2,
+		'menu_position'       => ${settings.menu_position},
 		'capability_type'     => '${settings.capability_type}',
 		'hierarchical'        => ${settings.hierarchical},
 		'has_archive'         => ${settings.archive_slug ? `'${settings.archive_slug}'` : true},
 		'query_var'           => ${settings.query_var},
 		'can_export'          => ${settings.can_export},
 		'rewrite_no_front'    => ${settings.rewrite_no_front},
-		'show_in_menu'        => ${settings.show_in_menu},
-		${menuIcon( settings )}
-		${restBase( settings )}
-		${supportSettings( settings )}
-		${taxonomySettings( settings )}
-		${reWrite( settings )}
+		'show_in_menu'        => ${settings.show_in_menu ? settings.show_in_menu : false},
+	`;
+}
+
+const PhpCode = settings => {
+	return (
+`function ${settings.function_name}() {
+	$args = [
+		${labelSettings( settings )}${advanceSettings( settings )}${menuIcon( settings )}${restBase( settings )}${supportSettings( settings )}${taxonomySettings( settings )}${reWrite( settings )}
 	];
 
 	register_post_type( '${settings.args_post_type}', $args );

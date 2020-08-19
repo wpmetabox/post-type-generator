@@ -9,13 +9,13 @@ const customStyles = {
 
 const Dropdown = ( {label, name, update, description = '', values, defaultValue} ) => {
 	return (
-		<label className="row align-start">
-			<div className="label">
+		<label className="ptg-row align-start">
+			<div className="ptg-label">
 				{label}
 			</div>
 			<div>
 				<Select id={name} name={name} options={values} defaultValue={defaultValue} isSearchable onChange={update} />
-				{description && <p className="description"><i>{description}</i></p>}
+				{description && <p className="ptg-description"><i>{description}</i></p>}
 			</div>
 		</label>
 	)

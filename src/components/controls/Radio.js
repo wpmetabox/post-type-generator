@@ -2,11 +2,11 @@ import React from 'react';
 
 const Radio = ( {label, name, update, values, defaultValue} ) => {
 	return (
-		<label id={name} className="row">
-			<div className="label">
+		<label id={name} className="ptg-row">
+			<div className="ptg-label">
 				{label}
 			</div>
-			<div className="row">
+			<div className="ptg-row">
 				{
 					values.map( ( item, key ) => {
 						return (

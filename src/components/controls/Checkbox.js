@@ -8,13 +8,11 @@ const Checkbox = ( {label, name, description, update, checked} ) => {
 	}
 
 	return (
-		<label htmlFor={name} className="row">
-			<div className="label" htmlFor={name}>
-				{label && label}
-			</div>
-			<div className="row">
+		<label htmlFor={name} className="ptg-row">
+			{label && <div className="ptg-label" htmlFor={name}>{label}</div>}
+			<div className="ptg-row">
 				<input type="checkbox" id={name} name={name} checked={isChecked} onChange={update} onClick={handleClick} />
-				{description && <p className="description">{description}</p>}
+				{description && <p className="ptg-description">{description}</p>}
 			</div>
 		</label>
 	)
