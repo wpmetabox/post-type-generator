@@ -65,7 +65,7 @@ h2 {
 		font-weight: bold;
 		cursor: pointer;
 	
-		label {
+		label:not(.ptg-icon-single) {
 			font-weight: normal;
 			margin-right: 30px;
 		}

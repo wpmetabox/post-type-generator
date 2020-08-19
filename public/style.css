@@ -49,7 +49,7 @@ h2 {
   #ptg-root label {
     font-weight: bold;
     cursor: pointer; }
-    #ptg-root label label {
+    #ptg-root label label:not(.ptg-icon-single) {
       font-weight: normal;
       margin-right: 30px; }
   #ptg-root input,
