@@ -3,7 +3,7 @@ import React from 'react';
 const Checkbox = ( {label, name, description, update, checked} ) => {
 	return (
 		<div className="ptg-field">
-			<label className="ptg-label" htmlFor={name}>{label}</label>
+			{label && <label className="ptg-label" htmlFor={name}>{label}</label>}
 			<div className="ptg-input">
 				{
 					description
