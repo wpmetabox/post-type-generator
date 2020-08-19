@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Dropdown = ( {label, name, update, description = '', values, defaultValue} ) => {
+const Select = ( {label, name, update, description = '', values, defaultValue} ) => {
 	return (
 		<div className="ptg-field">
 			<label className="ptg-label" htmlFor={name}>{label}</label>
@@ -14,4 +14,4 @@ const Dropdown = ( {label, name, update, description = '', values, defaultValue}
 	)
 }
 
-export default Dropdown;
+export default Select;
