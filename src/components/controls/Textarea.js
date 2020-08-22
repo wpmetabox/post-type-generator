@@ -6,7 +6,7 @@ const Textarea = ( {label, name, placeholder, update, description = '', required
 			{label}
 			{required && <span className="ptg-required">*</span>}
 		</label>
-		<div class="ptg-input">
+		<div className="ptg-input">
 			<textarea id={name} name={name} placeholder={placeholder} onChange={update} />
 			{description && <div className="ptg-description">{description}</div>}
 		</div>

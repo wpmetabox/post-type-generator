@@ -25,6 +25,31 @@ body {
       border-color: var(--color-light);
       border-radius: 4px 4px 0 0;
       color: inherit; }
+  .ptg ul {
+    margin: 0; }
+  .ptg li {
+    list-style: none; }
+  .ptg input[type="checkbox"] {
+    border: 1px solid var(--color-gray);
+    border-radius: 4px;
+    background: #fff;
+    color: var(--color-gray);
+    clear: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: -.5rem;
+    line-height: 0;
+    height: 1.4rem;
+    width: 1.4rem;
+    outline: 0;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-appearance: none; }
+    .ptg input[type="checkbox"]:checked::before {
+      content: url(data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2020%2020%27%3E%3Cpath%20d%3D%27M14.83%204.89l1.34.94-5.81%208.38H9.02L5.78%209.67l1.34-1.25%202.57%202.4z%27%20fill%3D%27%231e8cbe%27%2F%3E%3C%2Fsvg%3E);
+      display: inline-block;
+      margin: -.25rem 0 0 -.4rem;
+      width: 1.8rem; }
   .ptg input[type="text"],
   .ptg input[type="number"],
   .ptg textarea,
@@ -54,16 +79,24 @@ body {
     width: 16px;
     height: 16px;
     fill: var(--color-gray); }
+  .ptg pre {
+    padding: 0;
+    margin-top: 30px; }
   .ptg-required {
     color: var(--color-red); }
   .ptg-loading {
     margin-left: 12px;
     font-style: italic; }
+  .ptg-result {
+    position: relative; }
+    .ptg-result button {
+      position: absolute;
+      top: 10px;
+      right: 10px; }
   .ptg-field {
     margin-bottom: 24px;
     display: flex;
-    justify-content: space-between;
-    align-items: center; }
+    justify-content: space-between; }
   .ptg-label {
     width: 25%; }
   .ptg-input {

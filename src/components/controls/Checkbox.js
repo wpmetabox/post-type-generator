@@ -7,7 +7,7 @@ const Checkbox = ( {label, name, description, update, checked} ) => {
 			<div className="ptg-input">
 				{
 					description
-					? <label class="ptg-description"><input type="checkbox" id={name} name={name} defaultChecked={checked} onChange={update} /> {description}</label>
+					? <label className="ptg-description"><input type="checkbox" id={name} name={name} defaultChecked={checked} onChange={update} /> {description}</label>
 					: <input type="checkbox" id={name} name={name} defaultChecked={checked} onChange={update} />
 				}
 			</div>

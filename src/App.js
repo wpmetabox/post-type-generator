@@ -5,7 +5,8 @@ import { BasicDatas, LabelDatas, TaxonomyDatas, SupportDatas, AdvancedDatas } fr
 import Control from './components/controls/Control';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { CopyBlock, dracula } from 'react-code-blocks';
+import Highlight from 'react-highlight';
+import Clipboard from 'react-clipboard.js';
 import PhpCode from './constants/PhpCode';
 
 const App = () => {
@@ -13,6 +14,12 @@ const App = () => {
 
 	const showCodeBlock = () => {
 		setState( state => ( {...state, show_code: true} ) )
+	}
+
+	const [copied, setCopied] = useState( false );
+	const copy = () => {
+		setCopied(true);
+		setTimeout(() => setCopied( false ), 1000);
 	}
 
 	return (
@@ -27,7 +34,7 @@ const App = () => {
 				</TabList>
 
 				<TabPanel>
-					{ Object.keys( BasicDatas ).map( key => <Control key={key} props={BasicDatas[key]} /> ) }
+					{ Object.keys( BasicDatas ).map( key => <Control key={key} props={BasicDatas[key]} targetUpdate={[...LabelDatas, ...BasicDatas]} /> ) }
 				</TabPanel>
 				<TabPanel>
 					{ Object.keys( LabelDatas ).map( key => <Control key={key} props={LabelDatas[key]} /> ) }
@@ -36,15 +43,22 @@ const App = () => {
 					{ Object.keys( AdvancedDatas ).map( key => <Control key={key} props={AdvancedDatas[key]} /> ) }
 				</TabPanel>
 				<TabPanel>
-					{ Object.keys( SupportDatas ).map( key => <Control key={key} props={SupportDatas[key]} /> ) }
+					<Control name="supports" values={SupportDatas} props={SupportDatas} />
 				</TabPanel>
 				<TabPanel>
-					{ Object.keys( TaxonomyDatas ).map( key => <Control key={key} props={TaxonomyDatas[key]} /> ) }
+					<Control name="taxonomies" values={TaxonomyDatas} props={TaxonomyDatas} />
 				</TabPanel>
 			</Tabs>
 
 			<button className="ptg-button" onClick={showCodeBlock}>Generate Code</button>
-			{ true === state.show_code && <CopyBlock text={PhpCode( state )} language={'php'} showLineNumbers={true} theme={dracula} wrapLines={true} codeBlock /> }
+
+			{ 
+				true === state.show_code &&
+				<div className="ptg-result">
+					<Highlight language='php'>{PhpCode( state )}</Highlight>
+					<Clipboard title="Click to copy the code" data-clipboard-text={PhpCode( state )} onSuccess={copy}>{copied ? 'Copied' : 'Copy'}</Clipboard>
+				</div>
+			}
 		</PhpSettings.Provider>
 	);
 }
