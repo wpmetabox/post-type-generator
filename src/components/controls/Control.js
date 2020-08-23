@@ -35,18 +35,18 @@ const Control = ( {props, values, autoFills} ) => {
 			return;
 		}
 
-		autoFills.map( element => {
-			if ( name !== element.updateFrom ) {
+		autoFills.map( e => {
+			if ( name !== e.updateFrom ) {
 				return '';
 			}
 
 			let str;
-			if ( 'args_post_type' === element.name ) {
+			if ( 'args_post_type' === e.name ) {
 				str = stringToSlug( value );
-				setState( state => ( {...state, [element.name]: str} ) );
+				setState( state => ( {...state, [e.name]: str} ) );
 			} else {
-				str = element.defaultValue;
-				setState( state => ( {...state, [element.name]: str.replace( '%name%', value ).replace( '%singular_name%', value )} ) );
+				str = e.defaultValue;
+				setState( state => ( {...state, [e.name]: str.replace( '%name%', value ).replace( '%singular_name%', value )} ) );
 			}
 
 			return '';

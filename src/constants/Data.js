@@ -17,6 +17,7 @@ export const LabelDatas = [
 	{ type: 'text', name: 'edit_item', label: 'Edit item', defaultValue: 'Edit %singular_name%', updateFrom: 'singular_name', placeholder: 'The edit item text' },
 	{ type: 'text', name: 'new_item', label: 'New item', defaultValue: 'New %singular_name%', updateFrom: 'singular_name', placeholder: 'The new item text' },
 	{ type: 'text', name: 'view_item', label: 'View item', defaultValue: 'View %singular_name%', updateFrom: 'singular_name', placeholder: 'The view item text' },
+	{ type: 'text', name: 'update_item', label: 'Update item', defaultValue: 'View %singular_name%', updateFrom: 'singular_name', placeholder: 'The update item text' },
 	{ type: 'text', name: 'search_items', label: 'Search items', defaultValue: 'Search %name%', updateFrom: 'name', placeholder: 'The search items text text' },
 	{ type: 'text', name: 'not_found', label: 'Not found', defaultValue: 'No %name% found', updateFrom: 'name', placeholder: 'The not found text' },
 	{ type: 'text', name: 'not_found_in_trash', label: 'Not found in trash', defaultValue: 'No %name% found in Trash', updateFrom: 'name', placeholder: 'The not found in trash text' },
