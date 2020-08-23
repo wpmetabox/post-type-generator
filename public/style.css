@@ -80,15 +80,16 @@ body {
     height: 16px;
     fill: var(--color-gray); }
   .ptg pre {
-    padding: 0;
-    margin-top: 30px; }
+    padding: 0; }
   .ptg-required {
     color: var(--color-red); }
   .ptg-loading {
     margin-left: 12px;
     font-style: italic; }
   .ptg-result {
-    position: relative; }
+    margin-top: 48px; }
+    .ptg-result__body {
+      position: relative; }
     .ptg-result button {
       position: absolute;
       top: 10px;
