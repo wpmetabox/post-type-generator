@@ -27,29 +27,26 @@ const stringToSlug = str => {
 	return str;
 }
 
-const Control = ( {props, values, targetUpdate} ) => {
+const Control = ( {props, values, autoFills} ) => {
 	const [state, setState] = useContext( PhpSettings );
 
-	const handleTargetUpdate = ( name, targetUpdate, value ) => {
-		if ( ! targetUpdate ) {
+	const autoFill = ( name, autoFills, value ) => {
+		if ( ! autoFills ) {
 			return;
 		}
 
-		console.log(targetUpdate);
-
-
-		targetUpdate.map( ( target, key ) => {
-			if ( name !== target.updateFrom ) {
+		autoFills.map( element => {
+			if ( name !== element.updateFrom ) {
 				return '';
 			}
 
 			let str;
-			if ( 'args_post_type' === target.name ) {
+			if ( 'args_post_type' === element.name ) {
 				str = stringToSlug( value );
-				setState( state => ( {...state, [target.name]: str} ) );
+				setState( state => ( {...state, [element.name]: str} ) );
 			} else {
-				str = target.defaultValue;
-				setState( state => ( {...state, [target.name]: str.replace( '%name%', value ).replace( '%singular_name%', value )} ) );
+				str = element.defaultValue;
+				setState( state => ( {...state, [element.name]: str.replace( '%name%', value ).replace( '%singular_name%', value )} ) );
 			}
 
 			return '';
@@ -66,7 +63,7 @@ const Control = ( {props, values, targetUpdate} ) => {
 				break;
 			case 'text':
 				value = e.target.value;
-				handleTargetUpdate( name, targetUpdate, value );
+				autoFill( name, autoFills, value );
 				break;
 			default:
 				value = e.target.value;

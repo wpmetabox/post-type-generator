@@ -34,7 +34,7 @@ const App = () => {
 				</TabList>
 
 				<TabPanel>
-					{ Object.keys( BasicDatas ).map( key => <Control key={key} props={BasicDatas[key]} targetUpdate={[...LabelDatas, ...BasicDatas]} /> ) }
+					{ Object.keys( BasicDatas ).map( key => <Control key={key} props={BasicDatas[key]} autoFills={[...LabelDatas, ...BasicDatas]} /> ) }
 				</TabPanel>
 				<TabPanel>
 					{ Object.keys( LabelDatas ).map( key => <Control key={key} props={LabelDatas[key]} /> ) }
