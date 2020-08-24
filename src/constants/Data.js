@@ -1,27 +1,27 @@
 import { Icons } from './Icons';
 
 export const BasicDatas = [
-	{ type: 'text', name: 'name', label: 'Plural name', required: true, placeholder: 'General name for the post type' },
-	{ type: 'text', name: 'singular_name', label: 'Singular name', required: true, placeholder: 'Name for one object of the post type' },
+	{ type: 'text', name: 'name', label: 'Plural name', required: true },
+	{ type: 'text', name: 'singular_name', label: 'Singular name', required: true },
 	{ type: 'text', name: 'args_post_type', label: 'Slug', required: true, updateFrom: 'singular_name' },
-	{ type: 'text', name: 'function_name', label: 'Function name', placeholder: 'Your function name' },
-	{ type: 'text', name: 'text_domain', label: 'Text domain', placeholder: 'Your text domain' },
+	{ type: 'text', name: 'function_name', label: 'Function name' },
+	{ type: 'text', name: 'text_domain', label: 'Text domain' },
 ];
 
 export const LabelDatas = [
-	{ type: 'text', name: 'menu_name', label: 'Menu name', defaultValue: '%name%', updateFrom: 'name', placeholder: 'The menu name text' },
-	{ type: 'text', name: 'name_admin_bar', label: 'Name in admin bar', defaultValue: '%singular_name%', updateFrom: 'singular_name', placeholder: 'Name given for ther Add New dropdown' },
-	{ type: 'text', name: 'all_items', label: 'All items', defaultValue: 'All %name%', updateFrom: 'name', placeholder: 'The all items text used in the menu' },
-	{ type: 'text', name: 'add_new', label: 'Add new', defaultValue: 'Add %singular_name%', updateFrom: 'singular_name', placeholder: 'The add new text' },
-	{ type: 'text', name: 'add_new_item', label: 'Add new item', defaultValue: 'Add new %singular_name%', updateFrom: 'singular_name', placeholder: 'The add new item text' },
-	{ type: 'text', name: 'edit_item', label: 'Edit item', defaultValue: 'Edit %singular_name%', updateFrom: 'singular_name', placeholder: 'The edit item text' },
-	{ type: 'text', name: 'new_item', label: 'New item', defaultValue: 'New %singular_name%', updateFrom: 'singular_name', placeholder: 'The new item text' },
-	{ type: 'text', name: 'view_item', label: 'View item', defaultValue: 'View %singular_name%', updateFrom: 'singular_name', placeholder: 'The view item text' },
-	{ type: 'text', name: 'update_item', label: 'Update item', defaultValue: 'View %singular_name%', updateFrom: 'singular_name', placeholder: 'The update item text' },
-	{ type: 'text', name: 'search_items', label: 'Search items', defaultValue: 'Search %name%', updateFrom: 'name', placeholder: 'The search items text text' },
-	{ type: 'text', name: 'not_found', label: 'Not found', defaultValue: 'No %name% found', updateFrom: 'name', placeholder: 'The not found text' },
-	{ type: 'text', name: 'not_found_in_trash', label: 'Not found in trash', defaultValue: 'No %name% found in Trash', updateFrom: 'name', placeholder: 'The not found in trash text' },
-	{ type: 'text', name: 'parent_item_colon', label: 'Parent items', defaultValue: 'Parent %singular_name%', updateFrom: 'singular_name', placeholder: 'The parent text' },
+	{ type: 'text', name: 'menu_name', label: 'Menu name', defaultValue: '%name%', updateFrom: 'name' },
+	{ type: 'text', name: 'name_admin_bar', label: 'Name in admin bar', defaultValue: '%singular_name%', updateFrom: 'singular_name' },
+	{ type: 'text', name: 'all_items', label: 'All items', defaultValue: 'All %name%', updateFrom: 'name' },
+	{ type: 'text', name: 'add_new', label: 'Add new', defaultValue: 'Add %singular_name%', updateFrom: 'singular_name' },
+	{ type: 'text', name: 'add_new_item', label: 'Add new item', defaultValue: 'Add new %singular_name%', updateFrom: 'singular_name' },
+	{ type: 'text', name: 'edit_item', label: 'Edit item', defaultValue: 'Edit %singular_name%', updateFrom: 'singular_name' },
+	{ type: 'text', name: 'new_item', label: 'New item', defaultValue: 'New %singular_name%', updateFrom: 'singular_name' },
+	{ type: 'text', name: 'view_item', label: 'View item', defaultValue: 'View %singular_name%', updateFrom: 'singular_name' },
+	{ type: 'text', name: 'update_item', label: 'Update item', defaultValue: 'View %singular_name%', updateFrom: 'singular_name' },
+	{ type: 'text', name: 'search_items', label: 'Search items', defaultValue: 'Search %name%', updateFrom: 'name' },
+	{ type: 'text', name: 'not_found', label: 'Not found', defaultValue: 'No %name% found', updateFrom: 'name' },
+	{ type: 'text', name: 'not_found_in_trash', label: 'Not found in trash', defaultValue: 'No %name% found in Trash', updateFrom: 'name' },
+	{ type: 'text', name: 'parent_item_colon', label: 'Parent items', defaultValue: 'Parent %singular_name%', updateFrom: 'singular_name' },
 ];
 
 export const SupportDatas = [

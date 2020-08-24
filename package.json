@@ -5,12 +5,10 @@
 	"main": "index.js",
 	"scripts": {
 		"css": "node-sass --output-style compressed -x sass/style.scss -o public",
-		"watch": "node-sass -w sass -o public",
+		"watch": "node-sass --output-style compressed -x -w sass -o public",
 		"start": "react-scripts start",
 		"build": "react-scripts build"
 	},
-	"author": "",
-	"license": "ISC",
 	"dependencies": {
 		"node-sass": "^4.14.1",
 		"react": "^16.13.1",
