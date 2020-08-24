@@ -12,14 +12,13 @@ import PhpCode from './constants/PhpCode';
 const App = () => {
 	const [state, setState] = useState( DefaultSettings );
 
-	const showCodeBlock = () => {
-		setState( state => ( {...state, show_code: true} ) )
-	}
+	const [showCode, setShowCode] = useState( false );
+	const showCodeBlock = () => setShowCode( true );
 
 	const [copied, setCopied] = useState( false );
 	const copy = () => {
-		setCopied(true);
-		setTimeout(() => setCopied( false ), 1000);
+		setCopied( true );
+		setTimeout( () => setCopied( false ), 1000 );
 	}
 
 	return (
@@ -51,17 +50,12 @@ const App = () => {
 			</Tabs>
 
 			<button className="ptg-button" onClick={showCodeBlock}>Generate Code</button>
-
-			{ 
-				true === state.show_code &&
+			{
+				showCode &&
 				<div className="ptg-result">
-					<div className="alert alert-info">
-						Copy the code and paste into your theme's <code>functions.php</code> file. Wanna more features or use inside the WordPress admin?
-						<a href="https://metabox.io/pricing/" target="_blank" rel="noopener noreferrer">Become a premium user</a>.
-					</div>
-
+					<div className="alert alert-info">Copy the code and paste into your theme's <code>functions.php</code> file. Wanna more features or use inside the WordPress admin? <a href="https://metabox.io/pricing/" target="_blank" rel="noopener noreferrer">Become a premium user</a>.</div>
 					<div className="ptg-result__body">
-						<Highlight language='php'>{PhpCode( state )}</Highlight>
+						<Highlight className="php">{PhpCode( state )}</Highlight>
 						<Clipboard title="Click to copy the code" data-clipboard-text={PhpCode( state )} onSuccess={copy}>{copied ? 'Copied' : 'Copy'}</Clipboard>
 					</div>
 				</div>

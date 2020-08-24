@@ -92,8 +92,11 @@ body {
       position: relative; }
     .ptg-result button {
       position: absolute;
-      top: 10px;
-      right: 10px; }
+      top: 0;
+      right: 0;
+      padding: 8px 12px;
+      text-transform: none;
+      border-radius: 0 0 0 4px; }
   .ptg-field {
     margin-bottom: 24px;
     display: flex;

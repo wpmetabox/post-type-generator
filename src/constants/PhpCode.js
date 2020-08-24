@@ -97,7 +97,9 @@ const advanceSettings = settings => {
 
 const PhpCode = settings => {
 	return (
-`function ${settings.function_name}() {
+`<?php
+add_action( 'init', '${settings.function_name}' );
+function ${settings.function_name}() {
 	$args = [
 		${labelSettings( settings )}
 		${advanceSettings( settings )}${menuPostion( settings )}${restBase( settings )}${menuIcon( settings )}
@@ -107,9 +109,7 @@ const PhpCode = settings => {
 	];
 
 	register_post_type( '${settings.args_post_type}', $args );
-}
-
-add_action( 'init', '${settings.function_name}' );`
+}`
 	);
 }
 

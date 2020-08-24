@@ -2,8 +2,8 @@ const BasicSettings = {
 	'name'          : '',
 	'singular_name' : '',
 	'args_post_type': '',
-	'function_name' : '',
-	'text_domain'   : '',
+	'function_name' : 'your_prefix_register_post_type',
+	'text_domain'   : 'your-textdomain',
 }
 
 const LabelSettings = {

@@ -1,11 +1,11 @@
 import { Icons } from './Icons';
 
 export const BasicDatas = [
-	{ type: 'text', name: 'name', label: 'Plural name', required: true, placeholder: 'General name for the post type' },
-	{ type: 'text', name: 'singular_name', label: 'Singular name', required: true, placeholder: 'Name for one object of the post type' },
+	{ type: 'text', name: 'name', label: 'Plural name', required: true },
+	{ type: 'text', name: 'singular_name', label: 'Singular name', required: true },
 	{ type: 'text', name: 'args_post_type', label: 'Slug', required: true, updateFrom: 'singular_name' },
-	{ type: 'text', name: 'function_name', label: 'Function name', placeholder: 'Your function name' },
-	{ type: 'text', name: 'text_domain', label: 'Text domain', placeholder: 'Your text domain' },
+	{ type: 'text', name: 'function_name', label: 'Function name' },
+	{ type: 'text', name: 'text_domain', label: 'Text domain' },
 ];
 
 export const LabelDatas = [
