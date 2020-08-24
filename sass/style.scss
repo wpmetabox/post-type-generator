@@ -24,18 +24,19 @@ body {
 		margin-bottom: 24px;
 		}
 		&__tab {
-		font-weight: bold;
+			font-weight: bold;
+			margin-bottom: -2px;
 
-		> svg {
-			position: relative;
-			top: 2px;
-			margin-right: 4px;
-		}
+			> i {
+				color: var(--color-gray);
+				margin-right: 4px;
+			}
 		}
 		&__tab--selected {
-		border-color: var(--color-light);
-		border-radius: 4px 4px 0 0;
-		color: inherit;
+			border-color: var(--color-light);
+			border-bottom: 1px solid #fff;
+			border-radius: 4px 4px 0 0;
+			color: inherit;
 		}
 	}
 
