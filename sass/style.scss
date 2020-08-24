@@ -144,8 +144,9 @@ body {
 	}
 	&-description {
 		font-style: italic;
-		font-size: 12px;
-		margin-top: 2px;
+	}
+	&-input-list &-description {
+		font-style: normal;
 	}
 
 	&-choice {

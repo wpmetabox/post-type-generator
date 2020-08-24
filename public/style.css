@@ -103,9 +103,9 @@ body {
   .ptg-input {
     flex: 1; }
   .ptg-description {
-    font-style: italic;
-    font-size: 12px;
-    margin-top: 2px; }
+    font-style: italic; }
+  .ptg-input-list .ptg-description {
+    font-style: normal; }
   .ptg-choice {
     margin-right: 12px; }
   .ptg-icon {
