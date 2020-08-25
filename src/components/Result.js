@@ -9,8 +9,8 @@ const Result = () => {
 
 	const [copied, setCopied] = useState( false );
 	const copy = () => {
-		setCopied( copied => copied = true );
-		setTimeout( () => setCopied( copied => copied = false ), 1000 );
+		setCopied( true );
+		setTimeout( () => setCopied( false ), 1000 );
 	}
 
 	return (
@@ -21,7 +21,7 @@ const Result = () => {
 			</div>
 
 			<div className="ptg-result__body">
-				<Highlight language='php'>{PhpCode( state )}</Highlight>
+				<Highlight className="php">{PhpCode( state )}</Highlight>
 				<Clipboard title="Click to copy the code" data-clipboard-text={PhpCode( state )} onSuccess={copy}>{copied ? 'Copied' : 'Copy'}</Clipboard>
 			</div>
 		</div>
