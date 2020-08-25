@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PhpSettings from '../contexts/PhpSettings';
-import 'react-tabs/style/react-tabs.css';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
 import { BasicDatas, LabelDatas, TaxonomyDatas, SupportDatas, AdvancedDatas } from '../constants/Data';
 import Control from './controls/Control';
 
