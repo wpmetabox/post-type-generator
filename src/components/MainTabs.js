@@ -16,11 +16,11 @@ const MainTabs = () => {
 		<>
 			<Tabs forceRenderTabPanel={true}>
 				<TabList>
-					<Tab><i className="dashicons-admin-generic wp-menu-image dashicons-before"></i> General</Tab>
-					<Tab><i className="dashicons-tag wp-menu-image dashicons-before"></i> Labels</Tab>
-					<Tab><i className="dashicons-admin-settings dashicons-before"></i> Advanced</Tab>
-					<Tab><i className="dashicons-edit-large wp-menu-image dashicons-before"></i> Supports</Tab>
-					<Tab><i className="dashicons-category wp-menu-image dashicons-before"></i> Taxonomies</Tab>
+					<Tab><i className="dashicons-admin-generic dashicons"></i> General</Tab>
+					<Tab><i className="dashicons-tag dashicons"></i> Labels</Tab>
+					<Tab><i className="dashicons-admin-settings dashicons"></i> Advanced</Tab>
+					<Tab><i className="dashicons-edit-large dashicons"></i> Supports</Tab>
+					<Tab><i className="dashicons-category dashicons"></i> Taxonomies</Tab>
 				</TabList>
 
 				<TabPanel>
