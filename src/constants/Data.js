@@ -48,7 +48,7 @@ const CapabilityDatas = [
 ];
 
 const ShowInMenuData = [
-	{ name: 'show_in_menu', value: 0, label: 'Select an item' },
+	{ name: 'show_in_menu', value: '', label: 'Select an item' },
 	{ name: 'show_in_menu', value: true, label: 'Show as top-level menu' },
 	{ name: 'show_in_menu', value: false, label: 'Do not show in the admin menu' },
 	{ name: 'show_in_menu', value: 'index.php', label: 'Show as sub-menu of Dashboard' },

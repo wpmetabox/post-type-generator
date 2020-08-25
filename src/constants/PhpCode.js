@@ -41,29 +41,9 @@ const taxonomySettings = settings => {
 	return '' === temp ? '' : `'taxonomies' => [${temp}\n\t\t],`;
 }
 
-const menuIcon = settings => {
-	if ( undefined === settings.menu_icon ) {
-		return '';
-	}
-
-	return `\n\t\t'menu_icon'           => '${settings.menu_icon}',`;
-}
-
-const restBase = settings => {
-	if ( undefined === settings.rest_base ) {
-		return '';
-	}
-
-	return `\n\t\t'rest_base'           => '${settings.rest_base}',`;
-}
-
-const menuPostion = settings => {
-	if ( undefined === settings.menu_position ) {
-		return '';
-	}
-
-	return `\n\t\t'menu_position'       => ${settings.menu_position},`;
-}
+const menuIcon = settings => settings.menu_icon ? `\n\t\t'menu_icon'           => '${settings.menu_icon}',` : '';
+const restBase = settings => settings.rest_base ? `\n\t\t'rest_base'           => '${settings.rest_base}',` : '';
+const menuPostion = settings => settings.menu_position ? `\n\t\t'menu_position'       => ${settings.menu_position},` : '';
 
 const reWrite = settings => {
 	let result = `'rewrite' => `;
@@ -79,6 +59,10 @@ const reWrite = settings => {
 }
 
 const advanceSettings = settings => {
+	let showInMenu = false;
+	if ( settings.show_in_menu && 'false' !== settings.show_in_menu ) {
+		showInMenu = 'true' === settings.show_in_menu ? true : `'${settings.show_in_menu}'`;
+	}
 	return `'public'              => ${settings.public},
 		'exclude_from_search' => ${settings.exclude_from_search},
 		'publicly_queryable'  => ${settings.publicly_queryable},
@@ -92,7 +76,7 @@ const advanceSettings = settings => {
 		'query_var'           => ${settings.query_var},
 		'can_export'          => ${settings.can_export},
 		'rewrite_no_front'    => ${settings.rewrite_no_front},
-		'show_in_menu'        => ${settings.show_in_menu ? settings.show_in_menu : false},`;
+		'show_in_menu'        => ${showInMenu},`;
 }
 
 const PhpCode = settings => {
