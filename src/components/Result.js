@@ -2,7 +2,7 @@ import React, { useContext, useState, lazy, Suspense, memo } from 'react';
 import PhpSettings from '../contexts/PhpSettings';
 import PhpCode from '../constants/PhpCode';
 
-const Spinner = () => <span> Generating Code. Please wait...</span>;
+const Spinner = () => <span class="ptg-loading">Generating code. Please wait...</span>;
 
 const Result = () => {
 	const [state, setState] = useContext( PhpSettings );
@@ -13,17 +13,13 @@ const Result = () => {
 		setTimeout( () => setCopied( false ), 1000 );
 	}
 
-	const Highlight = lazy( () => import( 'react-highlight' ) ); 
-	const Clipboard = lazy( () => import( 'react-clipboard.js' ) ); 
+	const Highlight = lazy( () => import( 'react-highlight' ) );
+	const Clipboard = lazy( () => import( 'react-clipboard.js' ) );
 
 	return (
 		<Suspense fallback={<Spinner/>}>
 			<div className="ptg-result">
-				<div className="alert alert-info">
-					Copy the code and paste into your theme's <code>functions.php</code> file. Wanna more features or use inside the WordPress admin?
-					<a href="https://metabox.io/pricing/" target="_blank" rel="noopener noreferrer"> Become a premium user</a>.
-				</div>
-
+				<div className="alert alert-info">Copy the code and paste into your theme's <code>functions.php</code> file. Wanna more features or use inside the WordPress admin? <a href="https://metabox.io/pricing/" target="_blank" rel="noopener noreferrer">Become a premium user</a>.</div>
 				<div className="ptg-result__body">
 					<Highlight className="php">{PhpCode( state )}</Highlight>
 					<Clipboard title="Click to copy the code" data-clipboard-text={PhpCode( state )} onSuccess={copy}>{copied ? 'Copied' : 'Copy'}</Clipboard>
