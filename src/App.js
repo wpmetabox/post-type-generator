@@ -6,11 +6,12 @@ import Result from './components/Result';
 
 const App = () => {
 	const [state, setState] = useState( DefaultSettings );
+	const [showCode, setShowCode] = useState( false );
 
 	return (
 		<PhpSettings.Provider value={[state, setState]}>
-			<MainTabs />
-			{ true === state.show_code && <Result /> }
+			<MainTabs setShowCode={setShowCode} />
+			{ showCode && <Result /> }
 		</PhpSettings.Provider>
 	);
 }
