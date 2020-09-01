@@ -16,6 +16,14 @@ const Result = () => {
 	const Highlight = lazy( () => import( 'react-highlight' ) );
 	const Clipboard = lazy( () => import( 'react-clipboard.js' ) );
 
+	if ( ! state.name || ! state.singular_name ) {
+		return (
+			<div className="ctg-result">
+				<p className="alert alert-error">Required fields must not be empty!</p>
+			</div>
+		);
+	}
+
 	return (
 		<Suspense fallback={<Spinner/>}>
 			<div className="ptg-result">

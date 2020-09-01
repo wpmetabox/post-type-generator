@@ -119,6 +119,10 @@ body {
 	pre {
 		padding: 0;
 	}
+	.alert-error {
+		color: var(--color-red);
+		background: var(--color-pink);
+	}
 	&-required {
 		color: var(--color-red);
 	}
