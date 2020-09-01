@@ -1,6 +1,11 @@
 body {
 	background: #fff;
 }
+@media (max-width: 767px) {
+	.menu-item:nth-child(n+3) {
+		display: none;
+	}
+}
 
 .ptg {
 	--color-accent: #00b1b3;

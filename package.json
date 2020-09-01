@@ -1,5 +1,5 @@
 {
-	"name": "mb-cpt",
+	"name": "post-type-generator",
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
