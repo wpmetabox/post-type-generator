@@ -2,7 +2,7 @@ import React, { useContext, useState, lazy, Suspense, memo } from 'react';
 import PhpSettings from '../contexts/PhpSettings';
 import PhpCode from '../constants/PhpCode';
 
-const Spinner = () => <span class="ptg-loading">Generating code. Please wait...</span>;
+const Spinner = () => <span className="ptg-loading">Generating code. Please wait...</span>;
 
 const Result = () => {
 	const [state, setState] = useContext( PhpSettings );
@@ -18,7 +18,7 @@ const Result = () => {
 
 	if ( ! state.name || ! state.singular_name ) {
 		return (
-			<div className="ctg-result">
+			<div className="ptg-result">
 				<p className="alert alert-error">Required fields must not be empty!</p>
 			</div>
 		);
