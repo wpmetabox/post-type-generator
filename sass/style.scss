@@ -8,6 +8,16 @@ body {
 	}
 }
 
+.alert {
+	p {
+		margin-bottom: .75em;
+	}
+
+	ul {
+		margin-bottom: 0;
+	}
+}
+
 .ptg {
 	--color-accent: #00b1b3;
 	--color-gray: #999;
