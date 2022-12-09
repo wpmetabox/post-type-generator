@@ -46,16 +46,18 @@ const restBase = settings => settings.rest_base ? `\n\t\t'rest_base'           =
 const menuPostion = settings => settings.menu_position ? `\n\t\t'menu_position'       => ${settings.menu_position},` : '';
 
 const reWrite = settings => {
-	let result = `'rewrite' => `;
+	let value = [];
 
-	const rewrite_slug = undefined === settings.rewrite_slug ? '' : `'slug' => '${settings.rewrite_slug}'`;
-	const rewrite_no_front = undefined === settings.rewrite_no_front || false === settings.rewrite_no_front ? '' : ` 'with_front' => false`;
-
-	if ( '' === rewrite_slug && '' === rewrite_no_front ) {
-		return result + 'true';
+	if ( settings.rewrite_slug ) {
+		value.push( `'slug' => '${ settings.rewrite_slug }'` );
+	}
+	if ( settings.rewrite_no_front !== false ) {
+		value.push( `'with_front' => false` );
 	}
 
-	return result + `[ ${rewrite_slug},${rewrite_no_front} ]`;
+	value = value.length > 0 ? `[ ${value.join( ', ' ) } ]` : 'true';
+
+	return `'rewrite' => ${value}`;
 }
 
 const advanceSettings = settings => {
