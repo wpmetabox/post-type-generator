@@ -1,11 +1,10 @@
-# Post Type Generator
+# WordPress Post Type Generator
 
-### Step 1: Install Dependencies
-```javascript
-yarn install
-```
+This app helps you generate code for creating custom post types in WordPress. [Use it online](https://metabox.io/post-type-generator/).
 
-### Step 2: Run
-```javascript
-yarn start
+This app uses `create-react-app` to build. Use these commands to install and run:
+
+```js
+npm install
+npm start
 ```
