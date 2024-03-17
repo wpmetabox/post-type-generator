@@ -37,7 +37,7 @@ export const SupportSettings = {
 
 export const TaxonomySettings = {
 	'category': false,
-	'tag'     : false,
+	'post_tag': false,
 }
 
 export const AdvancedSettings = {
