@@ -38,7 +38,7 @@ export const SupportDatas = [
 
 export const TaxonomyDatas = [
 	{ name: 'category', description: 'Category', checked: false },
-	{ name: 'tag', description: 'Tag', checked: false },
+	{ name: 'post_tag', description: 'Tag', checked: false },
 ];
 
 const CapabilityDatas = [
