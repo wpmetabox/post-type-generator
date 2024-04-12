@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <title>WordPress Post Type Generator - Meta Box</title>
 
   <style>
     @font-face {
-        font-family: "Roboto Slab";
-        font-weight: 700;
-        font-display: swap;
-        src: local("Roboto Slab"), url(https://metabox.io/wp-content/themes/rooster/fonts/roboto-slab.woff2) format('woff2');
+      font-family: "Roboto Slab";
+      font-weight: 700;
+      font-display: swap;
+      src: local("Roboto Slab"), url(https://metabox.io/wp-content/themes/rooster/fonts/roboto-slab.woff2) format('woff2');
     }
   </style>
 
@@ -52,11 +53,12 @@
 <body class="page">
   <div class="top-bar">
     <nav class="header-navigation top-bar-navigation">
-      <ul class="menu">
-        <li class="menu-item"><a href="//demo.metabox.io">Demo</a></li>
+      <ul id="menu-top-bar-left" class="menu">
+        <li class="menu-item"><a href="https://metabox.io/demo/">Demo</a></li>
         <li class="menu-item"><a href="/online-generator/">Online Generator</a></li>
         <li class="menu-item current-menu-item"><a href="/post-type-generator/" aria-current="page">Post Type Generator</a></li>
-        <li class="menu-item"><a href="/taxonomy-generator/" aria-current="page">Taxonomy Generator</a></li>
+        <li class="menu-item"><a href="/taxonomy-generator/">Taxonomy Generator</a></li>
+        <li class="menu-item"><a href="/block-generator/">Block Generator</a></li>
       </ul>
     </nav>
     <nav class="header-navigation top-bar-navigation">
@@ -79,20 +81,25 @@
       <p class="site-description">Best WordPress Plugin for Custom Fields &amp; Meta Boxes</p>
     </div>
     <nav id="site-navigation" class="main-navigation header-navigation">
-      <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">Menu</button>
-      <ul id="primary-menu" class="menu nav-menu" aria-expanded="false">
-        <li class="menu-item"><a href="/features/">Features</a></li>
-        <li class="menu-item"><a href="/pricing/">Pricing</a></li>
-        <li class="menu-item"><a href="/plugins/">Extensions</a></li>
-        <li class="menu-item"><a href="#">Support</a>
+      <button class="menu-toggle">Menu</button>
+      <ul id="primary-menu" class="menu">
+        <li class="menu-item"><a href="https://metabox.io/features/">Features</a></li>
+        <li class="menu-item"><a href="https://metabox.io/pricing/">Pricing</a></li>
+        <li class="menu-item menu-item-has-children"><a href="https://metabox.io/plugins/">Products</a>
           <ul class="sub-menu">
-          <li class="menu-item"><a href="//docs.metabox.io">Documentation</a></li>
-          <li class="menu-item"><a href="/resources/">Resources</a></li>
-          <li class="menu-item"><a href="/support/">Support Forum</a></li>
+            <li class="menu-item"><a href="https://metabox.io/plugins/">Extensions</a></li>
+            <li class="menu-item"><a href="https://metabox.io/product-category/solutions/">Solutions</a></li>
+            <li class="menu-item"><a href="https://metabox.io/resources/">3rd-Party</a></li>
+            <li class="menu-item"><a href="https://metabox.io/showcase/">Showcase</a></li>
           </ul>
         </li>
-        <li class="menu-item"><a href="/blog/">Blog</a></li>
-        <li class="button button--menu menu-item"><a href="/pricing/">Get Meta Box</a></li>
+        <li class="menu-item menu-item-has-children"><a href="#">Support</a>
+          <ul class="sub-menu">
+            <li class="menu-item"><a href="https://docs.metabox.io">Documentation</a></li>
+            <li class="menu-item"><a href="https://support.metabox.io">Support Forum</a></li>
+          </ul>
+        </li>
+        <li class="menu-item"><a href="https://metabox.io/blog/">Blog</a></li>
       </ul>
     </nav>
   </header>
@@ -100,8 +107,8 @@
   <div class="site-content">
     <div class="page-header">
       <div class="container">
-		<h1 class="page-title">WordPress Custom Post Type Generator</h1>
-		<p>Generate custom post types for WordPress in a few click. Ready to copy and paste PHP code for custom post types.</p>
+        <h1 class="page-title">WordPress Custom Post Type Generator</h1>
+		    <p>Generate custom post types for WordPress in a few click. Ready to copy and paste PHP code for custom post types.</p>
       </div>
     </div>
     <main class="container">
@@ -117,6 +124,14 @@
   </div>
 
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/styles/atom-one-dark.min.css" media="print" onload="this.media='all'">
-  <script defer src="//metabox.io/wp-content/themes/rooster/js/navigation.js"></script>
+  <script>
+    ( function ( d ) {
+      d.querySelector( '.menu-toggle' ).addEventListener( 'click', () => {
+        d.querySelector( '#site-navigation' ).classList.toggle( 'toggled' );
+      }, { passive: true } );
+    } )( document );
+  </script>
+  <script src="https://scripts.elightup.com/sales.min.js?v=20240304v2" defer></script>
 </body>
+
 </html>
