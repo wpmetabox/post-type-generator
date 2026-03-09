@@ -11,12 +11,12 @@
 		"build": "react-scripts build"
 	},
 	"dependencies": {
-		"react": "^18",
-		"react-clipboard.js": "^2",
-		"react-dom": "^18",
-		"react-highlight": "^0.15",
-		"react-scripts": "^5",
-		"react-tabs": "^6"
+		"react": "^19.2.4",
+		"react-clipboard.js": "^2.0.16",
+		"react-dom": "^19.2.4",
+		"react-highlight": "^0.15.0",
+		"react-scripts": "^5.0.1",
+		"react-tabs": "^6.1.0"
 	},
 	"browserslist": {
 		"production": [
