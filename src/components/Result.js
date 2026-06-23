@@ -1,4 +1,4 @@
-import React, { lazy, memo, Suspense, useContext, useState } from 'react';
+import React, { lazy, memo, Suspense, useContext, useRef, useState } from 'react';
 import PhpCode from '../constants/PhpCode';
 import PhpSettings from '../contexts/PhpSettings';
 
@@ -9,15 +9,16 @@ const twitterIcon = <svg viewBox="0 0 24 24"><path d="M19.633,7.997c0.013,0.175,
 
 const Result = () => {
 	const [ state ] = useContext( PhpSettings );
-
 	const [ copied, setCopied ] = useState( false );
-	const copy = () => {
+	const codeRef = useRef( null );
+
+	const copy = async () => {
+		await navigator.clipboard.writeText( PhpCode( state ) );
 		setCopied( true );
 		setTimeout( () => setCopied( false ), 1000 );
 	};
 
 	const Highlight = lazy( () => import( 'react-highlight' ) );
-	const Clipboard = lazy( () => import( 'react-clipboard.js' ) );
 
 	if ( !state.name || !state.singular_name ) {
 		return (
@@ -36,9 +37,15 @@ const Result = () => {
 					<a className="ptg-share--facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmetabox.io%2Fpost-type-generator%2F" target="_blank" rel="noopener noreferrer">{ facebookIcon } Facebook</a>
 					<a className="ptg-share--twitter" href="https://twitter.com/intent/tweet?url=https://metabox.io/post-type-generator/&amp;via=wpmetabox&amp;text=I+just+generated+a+custom+post+type+for+%23WordPress" target="_blank" rel="noopener noreferrer">{ twitterIcon } Twitter</a>
 				</div>
-				<div className="ptg-result__body">
+				<div className="ptg-result__body" ref={ codeRef }>
 					<Highlight className="php">{ PhpCode( state ) }</Highlight>
-					<Clipboard title="Click to copy the code" data-clipboard-text={ PhpCode( state ) } onSuccess={ copy }>{ copied ? 'Copied' : 'Copy' }</Clipboard>
+					<button
+						className="ptg-copy"
+						title="Click to copy the code"
+						onClick={ copy }
+					>
+						{ copied ? 'Copied' : 'Copy' }
+					</button>
 				</div>
 			</div>
 		</Suspense>
