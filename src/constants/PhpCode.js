@@ -43,7 +43,7 @@ const taxonomySettings = settings => {
 
 const menuIcon = settings => settings.menu_icon ? `\n\t\t'menu_icon'           => '${settings.menu_icon}',` : '';
 const restBase = settings => settings.rest_base ? `\n\t\t'rest_base'           => '${settings.rest_base}',` : '';
-const menuPostion = settings => settings.menu_position ? `\n\t\t'menu_position'       => ${settings.menu_position},` : '';
+const menuPosition = settings => settings.menu_position ? `\n\t\t'menu_position'       => ${settings.menu_position},` : '';
 
 const reWrite = settings => {
 	let value = [];
@@ -88,7 +88,7 @@ add_action( 'init', '${settings.function_name}' );
 function ${settings.function_name}() {
 	$args = [
 		${labelSettings( settings )}
-		${advanceSettings( settings )}${menuPostion( settings )}${restBase( settings )}${menuIcon( settings )}
+		${advanceSettings( settings )}${menuPosition( settings )}${restBase( settings )}${menuIcon( settings )}
 		${supportSettings( settings )}
 		${taxonomySettings( settings )}
 		${reWrite( settings )}

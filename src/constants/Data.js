@@ -85,7 +85,7 @@ export const AdvancedDatas = [
 	{ type: 'checkbox', name: 'public', label: 'Public?', description: 'Controls how the type is visible to authors and readers.', checked: true },
 	{ type: 'checkbox', name: 'exclude_from_search', label: 'Exclude from search?', description: 'Whether to exclude posts with this post type from frontend search results.', checked: false },
 	{ type: 'checkbox', name: 'publicly_queryable', label: 'Publicly queryable?', description: 'Whether queries can be performed on the frontend.', checked: true },
-	{ type: 'checkbox', name: 'show_ui', label: ' Show UI? ', description: 'Whether queries can be performed on the frontend.', checked: true },
+	{ type: 'checkbox', name: 'show_ui', label: 'Show UI?', description: 'Whether queries can be performed on the frontend.', checked: true },
 	{ type: 'checkbox', name: 'show_in_nav_menus', label: 'Show in nav menus?', description: 'Whether queries can be performed on the frontend.', checked: true },
 	{ type: 'select', name: 'show_in_menu', label: 'Show in menu?', description: 'Where to show the post type in the admin menu. show_ui must be true.', values: ShowInMenuData, defaultValue: 0 },
 	{ type: 'checkbox', name: 'show_in_admin_bar', label: 'Show in admin bar?', description: 'Whether to make this post type available in the WordPress admin bar.', checked: true },
